@@ -28,5 +28,13 @@ public class EqualsTest {
 		System.out.println(str1.hashCode());
 		System.out.println(str2.hashCode());
 		System.out.println(str3.hashCode());
+		
+//		Object i1=new StringBuffer(23);
+//		Object i2=new StringBuffer(23);
+//		if(i1.equals(i2)){
+//			System.out.println("EqualsTest.main()");
+//		}
+//		System.out.println(i1.hashCode());
+//		System.out.println(i2.hashCode());
 	}
 }
