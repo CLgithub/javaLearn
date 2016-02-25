@@ -19,7 +19,8 @@ public class PropertiesFile {
 		try {
 			properties.load(new FileInputStream(name));
 		} catch (IOException e) {
-			properties.put("count", new Integer(0).toString());
+			System.out.println(e.getMessage());
+		//	properties.put("count", new Integer(0).toString());
 		}
 		Integer count=Integer.parseInt(properties.getProperty("count"))+1;
 		System.out.println("程序第"+count+"次运行");
