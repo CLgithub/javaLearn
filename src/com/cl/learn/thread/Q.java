@@ -29,8 +29,9 @@ public class Q {
 	 */
 	public synchronized void producer(int i){
 		if(bFull){//如果为true，表示已经存入，则该线程进入睡眠等待
+//			System.out.println("----");
 			try {
-				wait();
+				wait();//此处改为sleep可测试sleep是否释放锁旗标
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
