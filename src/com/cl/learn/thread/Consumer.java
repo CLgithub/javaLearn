@@ -11,9 +11,7 @@ public class Consumer implements Runnable{
 	@Override
 	public void run() {
 		while(true){
-			synchronized (q) {//新增同步锁，功能满足，但不够好
-				System.out.println(q.getName()+"--->"+q.getGender());
-			}
+			q.consumer(q);
 		}
 	}
 
