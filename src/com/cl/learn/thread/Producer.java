@@ -12,19 +12,21 @@ public class Producer implements Runnable{
 	public void run() {
 		int i=0;
 		while(true){
-			if(i==0){
-				q.setName("小明");
-				try {
-					Thread.sleep(10);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
+			synchronized (q) {//新增同步锁，功能满足，但不够好
+				if(i==0){
+					q.setName("小明");
+					try {
+						Thread.sleep(10);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					q.setGender("男");
+				}else {
+					q.setName("小红");
+					q.setGender("女");
 				}
-				q.setGender("男");
-			}else {
-				q.setName("小红");
-				q.setGender("女");
+				i=(i+1)%2;
 			}
-			i=(i+1)%2;
 		}
 	}
 
