@@ -9,7 +9,7 @@ package com.cl.javabasis.day3;
 		应用： 对数据加密.
 	~  (取反)
 */
-class Demo9{
+class Demo09{
 
 	public static void main(String[] args){
 		System.out.println(6&3); // 2 

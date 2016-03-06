@@ -15,7 +15,7 @@ package com.cl.javabasis.day3;
  * 小数据类型-------->大数据类型	自动类型转换
  * 大数据类型-------->小数据类型
  */
-public class Demo2 {
+public class Demo02 {
 	public static void main(String[] args) {
 		/*byte b=11;
 		short s=b;
