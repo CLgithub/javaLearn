@@ -28,8 +28,10 @@ public class MyDemo4 {
 	 * @date 2016年3月7日
 	 */
 	private static void method2(int[] array){
+		int conut=0;
 		for(int i=0;i<array.length;i++){
 			for(int j=i+1;j<array.length;j++){
+				conut++;
 				if(array[j]>array[i]){
 					array[i]=array[i]^array[j];
 					array[j]=array[i]^array[j];
@@ -37,6 +39,7 @@ public class MyDemo4 {
 				}
 			}
 		}
+		System.out.println("循环"+conut);
 		for(int i=0;i<array.length;i++){
 			System.out.println(array[i]);
 		}
@@ -51,10 +54,20 @@ public class MyDemo4 {
 	 * @param array
 	 */
 	private static void method3(int[] array){
+		int conut=0;
 		for(int i=0;i<array.length;i++){
-			for(int j=i+1;j<array.length;j++){
-				
+			for(int j=0;j<array.length-1-i;j++){
+				conut++;
+				if(array[j]>array[j+1]){
+					array[j+1]=array[j+1]^array[j];
+					array[j]=array[j+1]^array[j];
+					array[j+1]=array[j+1]^array[j];
+				}
 			}
+		}
+		System.out.println("循环"+conut);
+		for(int i=0;i<array.length;i++){
+			System.out.println(array[i]);
 		}
 	}
 	
