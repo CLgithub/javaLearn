@@ -1,11 +1,18 @@
 package com.cl.javabasis.day4;
 
+import java.util.ArrayList;
+
 public class MyDemo4 {
 
 	public static void main(String[] args) {
-		int[] array1={1,4,7,9,23,45,1,32,78,90,23,10,21};
-		int[] array2={1,4};
-		method4(array1,1);
+		int[] array1={1,4,7,9,25,45,11,32,78,90,23,10,21};
+		int[] array2={1,4,5};
+		int[] array3=new int[100];
+		for(int i=1;i<array3.length;i++){
+			array3[i]=i;
+		}
+		method4(array3,98);
+		method5(array3,98);
 	}
 	/**
 	 * 找到一个int数组中最大的元素
@@ -84,15 +91,16 @@ public class MyDemo4 {
 	 * @return 
 	 */
 	private static int method4(int[] array,int key){
+//		method3(array);
 		int conut=0;
 		int min,mid,max;
 		min=0;
-		max=array.length;
+		max=array.length-1;
 		mid=(min+max)/2;
-		while(key==array[mid]){
+		while(key!=array[mid]){
 			conut++;
 			if(key>array[mid]){
-				min = mid + 1;
+				min = mid + 1;//妙处
 			}else if(key<array[mid]){
 				max = mid - 1;
 			}
@@ -104,7 +112,33 @@ public class MyDemo4 {
 		System.out.println("目标值为："+key+",数组脚标为"+mid);
 		System.out.println("循环"+conut);
 		return mid;
-		
+	}
+	
+	/**
+	 * 对method4进行改进,但其实4已经够好了
+	 */
+	private static int method5(int[] array,int key){
+//		method3(array);
+		int conut=0;
+		int min,mid,max;
+		min=0;
+		max=array.length-1;
+		mid=(min+max)/2;
+		while(key!=array[mid]){
+			conut++;
+			if(key>array[mid]){
+				min = mid;
+			}else if(key<array[mid]){
+				max = mid;
+			}
+//			if(min+1==max) {
+//				return -1;
+//			}
+			mid = (max+min)/2;
+		}
+		System.out.println("目标值为："+key+",数组脚标为"+mid);
+		System.out.println("循环"+conut);
+		return mid;
 	}
 	
 }
