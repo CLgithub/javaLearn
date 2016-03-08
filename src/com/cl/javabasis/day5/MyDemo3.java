@@ -5,7 +5,6 @@ public class MyDemo3 {
 		Person p1=new Person(4,"a");
 		System.out.println(p1);
 	}
-	
 }
 
 class Person{
