@@ -5,9 +5,10 @@ import java.util.ArrayList;
 public class MyDemo4 {
 
 	public static void main(String[] args) {
+		//数组初始化的三种方式
 		int[] array1={1,4,7,9,25,45,11,32,78,90,23,10,21};
-		int[] array2={1,4,5};
 		int[] array3=new int[100];
+		int[] array2=new int[]{23,34,12};
 		for(int i=1;i<array3.length;i++){
 			array3[i]=i;
 		}
