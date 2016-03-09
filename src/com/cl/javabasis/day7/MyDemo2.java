@@ -10,5 +10,13 @@ public class MyDemo2 {
 		
 //		stu.method2();
 //		System.out.println(stu);
+		new MyDemo2().print();
 	}
+	
+	private void print(){
+		System.out.println(super.toString());
+		System.out.println(super.getClass());
+	}
+
+	
 }
