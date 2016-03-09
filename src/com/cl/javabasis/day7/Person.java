@@ -34,6 +34,7 @@ class Student extends Person {
 		System.out.println("子类无参构造函数！");
 	}
 	public Student(int i) {
+//		this();
 		super(1);//调用父类有参构造函数
 		System.out.println("子类有参构造函数！");
 	}
