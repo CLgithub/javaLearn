@@ -20,11 +20,13 @@ abstract与其他修饰符的关系:
 public class MyDemo1 {
 	public static void main(String[] args) {
 		new Class2();
+		
+		Class1.name="";
 	}
 }
 
 abstract class Class1{
-	
+	static String name;
 	//抽象类可以有构造方法，主要为了初始化抽象类中的属性。通常由子类实现。
 	public Class1() {
 		System.out.println("抽象类的构造方法");
