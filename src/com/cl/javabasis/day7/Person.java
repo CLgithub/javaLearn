@@ -9,6 +9,8 @@ package com.cl.javabasis.day7;
 		但是可以通过super关键字显式调用父类指定构造函数。
 	3：为什么super()this()语句要放在构造函数的第一行
 		子类可能会用到父类的属性，所以必须先初始化父类。
+		
+		结合MyDemo2看效果
  * */
 class Person {
 	static{
