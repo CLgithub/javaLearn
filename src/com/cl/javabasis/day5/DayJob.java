@@ -46,14 +46,17 @@ class PersonA {
 		System.out.println("无参构造函数");
 	}
 	//有参构造函数
-	public PersonA(int age){	
+	public PersonA(int age){
 		System.out.println("有参构造函数");
 	}
 	//初始化代码块,即构造代码块
 	{
 		System.out.println("初始化代码块");
 	}
-	
+	//静态的初始化块
+	static{
+		System.out.println("静态的初始化块");
+	}
 
 	public String getName() {
 		return name;
