@@ -2,7 +2,7 @@ package com.cl.javabasis.day10;
 
 public class MyDemo5 {
 	public static void main(String[] args) {
-		method2();
+		method3();
 	}
 	
 	public static void method1(){
@@ -20,5 +20,20 @@ public class MyDemo5 {
 		System.out.println(throwable.toString());// 输出该异常的类名
 		System.out.println(throwable.getMessage()); // 输出异常的信息
 		throwable.printStackTrace();// 打印栈信息
+	}
+	//try里面有格return语句，finally里面也会执行，在teturn前执行
+	public static void method3() {
+		try {
+			method4();
+			return;
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}finally {
+			System.out.println("最后都要执行");
+		}
+	}
+	
+	public static void method4() throws Exception{
+		throw new Exception("我的异常");//手动抛出异常
 	}
 }
