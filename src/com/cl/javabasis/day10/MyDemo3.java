@@ -4,6 +4,14 @@ public class MyDemo3 {
 	public static void main(String[] args) {
 		Dome1.Inner1 inner1=new Dome1().new Inner1();
 		inner1.show();
+		new MyDemo3().myshow();
+	}
+	
+	int a=1;
+	
+	private void myshow(){
+		MyDemo3.this.a=3;
+		System.out.println(MyDemo3.this.a);
 	}
 }
 class Dome1{
