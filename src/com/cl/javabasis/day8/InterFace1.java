@@ -12,13 +12,12 @@ package com.cl.javabasis.day8;
 
  */
 public interface InterFace1 {
+	
 
 	
 	public static final String name="abc";
 	
 	void method1();
 	
-	public  static void method2(){
-		System.out.println("接口中的静态方法");
-	}
+	public abstract void method2();
 }
