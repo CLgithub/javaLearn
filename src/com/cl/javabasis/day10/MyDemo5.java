@@ -2,7 +2,8 @@ package com.cl.javabasis.day10;
 
 public class MyDemo5 {
 	public static void main(String[] args) {
-		method3();
+		int i=method3();
+		System.out.println(i);
 	}
 	
 	public static void method1(){
@@ -22,15 +23,16 @@ public class MyDemo5 {
 		throwable.printStackTrace();// 打印栈信息
 	}
 	//try里面有格return语句，finally里面也会执行，在teturn前执行
-	public static void method3() {
+	public static int method3() {
 		try {
 			method4();
-			return;
+			return -1;
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}finally {
 			System.out.println("最后都要执行");
 		}
+		return 1;
 	}
 	
 	public static void method4() throws Exception{
