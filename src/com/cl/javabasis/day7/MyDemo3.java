@@ -17,7 +17,7 @@ instanceof
 1：定义动物类
 2：定义狗类继承动物类
 3：定义猫类继承动物类
-4：定义功能根据传入的动物，执行具体的功能
+4：定义功能根据传入的动物，执行具体的功能 
 */
 public class MyDemo3 {
 	public static void main(String[] args) {

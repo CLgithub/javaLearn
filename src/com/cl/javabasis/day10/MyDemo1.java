@@ -12,7 +12,6 @@ public class MyDemo1 {
 		System.out.println("外部类访问静态内部类静态成员："+Inner2.count);
 		System.out.println("外部类访问静态内部类非静态成员："+new Inner2().count2);
 //		new Inner().print();
-		
 //		System.out.println(new MyDemo1.Inner().count);
 	}
 	

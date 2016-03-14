@@ -17,7 +17,7 @@ class Person{
 //		System.out.println(this);
 	}
 	public Person(int age,String name) {
-		//构造函数相互调用,只能反正第一行
+		//构造函数相互调用,只能放在第一行
 		this(age);
 //		this.age=age;
 		this.name=name;

@@ -14,7 +14,7 @@ class Demo09{
 	public static void main(String[] args){
 		System.out.println(6&3); // 2 
 		System.out.println(6|3); // 7
-		System.out.println(6^3^3); //  5
+		System.out.println(6^3^3); //  6
 
 		System.out.println(~7);  // -8
 	}
