@@ -1,5 +1,7 @@
 package com.cl.javabasis.day11;
 
+import java.time.Month;
+import java.util.Arrays;
 import java.util.Date;
 /**
  存在问题：
@@ -21,8 +23,8 @@ import java.util.Date;
 public class MyDemo1 {
 	public static void main(String[] args) {
 //		testM1();
-//		new ClassB().getRunTime();
-		new ClassC().getRunTime();
+		new ClassD().getRunTime();
+		new ClassE().getRunTime();
 	}
 	
 	private static void testM1() {
@@ -59,6 +61,37 @@ class ClassC extends ClassA{
 		for (int i = 0; i < 1000; i++) {
 			for (int j = 0; j < 10; j++) {
 				System.out.println("ClassB.cunCode()");
+			}
+		}
+	}
+}
+
+class ClassD extends ClassA{
+	@Override
+	void cunCode() {
+		int[] arr = new int[10000];
+		for(int i=0;i<100;i++){
+//			System.out.println((int)(Math.random()*100));
+			arr[10000-1-i]=(int)(Math.random()*100);
+		}
+		Arrays.sort(arr);
+	}
+}
+class ClassE extends ClassA{
+	@Override
+	void cunCode() {
+		int[] arr = new int[10000];
+		for(int i=0;i<100;i++){
+//			System.out.println((int)(Math.random()*100));
+			arr[10000-1-i]=(int)(Math.random()*100);
+		}
+		for (int j = 0; j < arr.length - 1; j++) {
+			for (int i = 0; i < arr.length -1 - j; i++) {
+				if (arr[i] > arr[i + 1]) {
+					arr[i] = arr[i] ^ arr[i + 1];
+					arr[i + 1] = arr[i] ^ arr[i + 1];
+					arr[i] = arr[i] ^ arr[i + 1];
+				}
 			}
 		}
 	}
