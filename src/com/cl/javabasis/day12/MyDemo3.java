@@ -7,8 +7,8 @@ public class MyDemo3 {
 	public static void main(String[] args) {
 		String path="D:\\20120512\\day12\\Demo1.java";
 //		getFileName(path);
-//		method1();
-		getCount(path, "2");
+		method1();
+//		getCount(path, "2");
 	}
 	
 	/**
@@ -27,6 +27,7 @@ public class MyDemo3 {
 	 * @date 2016年3月20日
 	 */
 	static void method1(){
+		//方法一
 		String str="abc; d";
 		char[] cs=str.toCharArray();
 		for(int i=0;i<cs.length/2;i++){
@@ -35,6 +36,11 @@ public class MyDemo3 {
 			cs[i]=(char) (cs[i]^cs[cs.length-1-i]);
 		}
 		System.out.println(new String(cs));
+		//方法二
+		String str2="abc; d";
+		StringBuffer sBuffer=new StringBuffer(str2);
+		sBuffer.reverse();
+		System.out.println(sBuffer);
 	}
 	
 	/**
