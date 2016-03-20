@@ -1,4 +1,4 @@
-package com.cl.javabasis.day14;
+package com.cl.javabasis.day13;
 
 import java.util.Random;
 
@@ -7,7 +7,8 @@ import java.util.Random;
  */
 public class MyDemo4 {
 	public static void main(String[] args) {
-		method1();
+//		method1();
+		method2();
 	}
 	
 	static void method1(){
@@ -33,5 +34,16 @@ public class MyDemo4 {
 		
 		System.out.println(random.nextBoolean());
 		
+	}
+	
+	static void method2(){
+		Random random=new Random();
+		char[] arr={'a','b','c','中','文'};
+		StringBuilder sBuilder=new StringBuilder();
+		for(int i=0;i<5;i++){
+			int index=random.nextInt(arr.length);
+			sBuilder.append(arr[index]);
+		}
+		System.out.println(sBuilder);
 	}
 }
