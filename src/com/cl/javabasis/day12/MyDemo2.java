@@ -56,14 +56,14 @@ public class MyDemo2 {
 //		System.out.println(Arrays.toString(cs));
 		
 		//其他方法
-//		String str8=" test String";
-//		System.out.println(str8.replace('s', 'b'));//替换
-//		String[] strings=str8.split("i");//切割
-//		System.out.println(Arrays.toString(strings));
-//		System.out.println(str8.substring(1));//截取字符串
-//		System.out.println(str8.toUpperCase());//转换为大写
-//		System.out.println(str8.toLowerCase());//转换为小写
-//		System.out.println(str8.trim());//去前后空格
+		String str8=" test String";
+		System.out.println(str8.replace('s', 'b'));//替换
+		String[] strings=str8.split("i");//切割
+		System.out.println(Arrays.toString(strings));
+		System.out.println(str8.substring(2));//截取字符串
+		System.out.println(str8.toUpperCase());//转换为大写
+		System.out.println(str8.toLowerCase());//转换为小写
+		System.out.println(str8.trim());//去前后空格
 		
 		
 		
