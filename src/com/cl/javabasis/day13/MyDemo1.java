@@ -73,7 +73,7 @@ public class MyDemo1 {
 	
 	static void testGetenv(){
 //		System.out.println(System.getenv());//获得所有环境变量
-//		System.out.println(System.getenv("PATH"));
+		System.out.println(System.getenv("PATH"));
 		Properties properties=System.getProperties();//获得所有系统属性
 		properties.list(System.out);
 		System.out.println(System.getProperty("os.name"));//获得某个系统属性
