@@ -7,28 +7,46 @@ package com.cl.javabasis.day14;
  * 		创建线程两种方式：
  * 			一继承thread类
  * 			二实现runnable接口
+ * 
+ * 		线程常用方法
+ 			Thread(String name)     初始化线程的名字
+			setName(String name)    设置线程对象名
+			getName()            	返回线程的名字
+			
+			sleep()					线程睡眠指定的毫秒数。 静态的方法， 那个线程执行了sleep方法代码那么就是那个线程睡眠。
+			currentThread()      	返回当前的线程对象，该方法是一个静态的方法， 注意： 那个线程执行了currentThread()代码就返回那个线程 的对象。
+			getPriority()             返回当前线程对象的优先级   默认线程的优先级是5
+			setPriority(int newPriority) 设置线程的优先级    虽然设置了线程的优先级，但是具体的实现取决于底层的操作系统的实现（最大的优先级是10 ，最小的1 ， 默认是5）。
+ * 		
  */
 public class MyDemo1 {
 	public static void main(String[] args) {
-		new Thread1("小明").start();
-		new Thread1("小红").start();
+		Thread1 thread1=new Thread1("小明");
+		Thread1 thread2=new Thread1("小红");
+		thread1.start();
+		thread2.start();
 		for (int i = 0; i < 100; i++) {
-			System.out.println("MyDemo1.main()");
+			System.out.println(Thread.currentThread());
 		}
 	}
 }
 
 class Thread1 extends Thread{
-	private String name;
 	public Thread1(String name) {
-		this.name = name;
+		super(name);
 	}
 
 	public void run() {
 		for (int i = 0; i < 100; i++) {
-			System.out.println(this.name+i);
+			System.out.println(Thread.currentThread().getName()+i);
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 	}
+
 	
 	
 }
