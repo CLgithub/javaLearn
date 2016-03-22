@@ -7,16 +7,14 @@ package com.cl.javabasis.day14;
  */
 public class MyDemo2 {
 	public static void main(String[] args) {
-//		Thre t1=new Thre();
-//		Thre t2=new Thre();
-//		Thre t3=new Thre();
-//		Thre t4=new Thre();
-//		t1.start();
-//		t2.start();
-//		t3.start();
-//		t4.start();
+		/*Thre t1=new Thre();
+		Thre t2=new Thre();
+		Thre t3=new Thre();
+		t1.start();
+		t2.start();
+		t3.start();*/
+		
 		Thre2 t1=new Thre2();
-		new Thread(t1).start();
 		new Thread(t1).start();
 		new Thread(t1).start();
 		new Thread(t1).start();
@@ -24,34 +22,36 @@ public class MyDemo2 {
 }
 
 class Thre extends Thread{
-	private static int tickets=100;
+	static int tickets=50;
+	static String syn=new String("");//必须是唯一共享的
 	public void run() {
 		while(true){
-			shoupiao();
+			synchronized(syn){
+				shoupiao();
+				try {
+					Thread.sleep(10);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 	}
-	private synchronized void shoupiao() {
-		if(tickets>0){
-			try {
-				Thread.sleep(1);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			System.out.println(Thread.currentThread().getName()+":"+tickets);
+	void shoupiao() {
+		if (tickets > 0) {
+			System.out.println(Thread.currentThread().getName() + ":" + tickets);
 			tickets--;
 		}
 	}
 }
 
 class Thre2 implements Runnable{
-	private int tickets=100;
-	String str=new String("");
+	private int tickets=50;
 	public void run() {
 		while(true){
 			shoupiao();
 		}
 	}
-	private synchronized void shoupiao() {
+	private synchronized void shoupiao() {//同步方法相当于用this做说对象
 		if(tickets>0){
 			try {
 				Thread.sleep(10);

@@ -23,13 +23,18 @@ public class MyDemo1 {
 	public static void main(String[] args) {
 		Thread1 thread1=new Thread1("小明");
 		Thread1 thread2=new Thread1("小红");
+		thread1.setPriority(10);
+		thread2.setPriority(1);
+		System.out.println(thread1.getPriority());
+		System.out.println(thread2.getPriority());
+		
 		thread1.start();
-		thread2.setName("小白");//设置线程名
+//		thread2.setName("小白");//设置线程名
 		thread2.start();
-		for (int i = 0; i < 10; i++) {
+		/*for (int i = 0; i < 10; i++) {
 			System.out.println(Thread.currentThread());//得到线程对象
 			System.out.println(Thread.currentThread().getPriority());//得到线程优先级
-		}
+		}*/
 	}
 }
 
