@@ -19,7 +19,7 @@ public class MyDemo2 {
 		new Thread(t1).start();
 		new Thread(t1).start();
 		new Thread(t1).start();
-//		new Thread(t1).start();
+		new Thread(t1).start();
 	}
 }
 
@@ -38,15 +38,21 @@ class Thre extends Thread{
 
 class Thre2 implements Runnable{
 	private int tickets=100;
+	String str=new String("");
 	public void run() {
 		while(true){
-			if(tickets>0){
-				shoupiao();
-			}
+			shoupiao();
 		}
 	}
 	private synchronized void shoupiao() {
-		System.out.println(Thread.currentThread().getName()+":"+tickets);
-		tickets--;
+		if(tickets>0){
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println(Thread.currentThread().getName()+":"+tickets);
+			tickets--;
+		}
 	}
 }
