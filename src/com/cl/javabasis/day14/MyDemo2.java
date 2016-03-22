@@ -26,13 +26,20 @@ public class MyDemo2 {
 class Thre extends Thread{
 	private static int tickets=100;
 	public void run() {
-		while(tickets>0){
+		while(true){
 			shoupiao();
 		}
 	}
-	private void shoupiao() {
-		System.out.println(Thread.currentThread().getName()+":"+tickets);
-		tickets--;
+	private synchronized void shoupiao() {
+		if(tickets>0){
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println(Thread.currentThread().getName()+":"+tickets);
+			tickets--;
+		}
 	}
 }
 
