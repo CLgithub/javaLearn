@@ -36,7 +36,7 @@ class A {
 //		} catch (InterruptedException e) {
 //			e.printStackTrace();
 //		}
-		System.out.println(name+"尝试调用b的last()方法");
+//		System.out.println(name+"尝试调用b的last()方法");
 		b.last();
 	}
 	synchronized void last(){
@@ -53,12 +53,10 @@ class B {
 //		} catch (InterruptedException e) {
 //			e.printStackTrace();
 //		}
-		System.out.println(name+"尝试调用a的last()方法");
+//		System.out.println(name+"尝试调用a的last()方法");
 		a.last();
 	}
 	synchronized void last() {
 		System.out.println("B.last()");
 	}
-
-	
 }
