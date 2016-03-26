@@ -15,9 +15,9 @@ public class MyDemo2 {
 		t3.start();*/
 		
 		Thre2 t1=new Thre2();
-		new Thread(t1).start();
-		new Thread(t1).start();
-		new Thread(t1).start();
+		new Thread(t1,"W1").start();
+		new Thread(t1,"W2").start();
+		new Thread(t1,"W3").start();
 	}
 }
 
@@ -53,12 +53,12 @@ class Thre2 implements Runnable{
 	}
 	private synchronized void shoupiao() {//同步方法相当于用this做说对象
 		if(tickets>0){
+			System.out.println(Thread.currentThread().getName()+":"+tickets);
 			try {
 				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			System.out.println(Thread.currentThread().getName()+":"+tickets);
 			tickets--;
 		}
 	}
