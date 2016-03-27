@@ -7,8 +7,15 @@ import java.sql.Struct;
  * 有一个数据存储空间，划分为两个部分，一部分存储人的姓名，一部分存储性别，
  * 我们开启一个线程，不停地想其中存储姓名和性别（生产者），
  * 开启另一个线程从数据存储空间中取出数据（消费者）
- * @author L
- * @date 2016年3月23日
+ * 
+ * wait():等待，如果线程执行了wait方法，那么线程会进入等待的状态，
+ * 		等待状态的线程必须要被其他线程用notify方法才能唤醒
+ * notify():唤醒，唤醒等待的线程
+ * 
+ * wait和notify方法要注意的事项：
+ * 	1、wait方法与notify方法是属于object对象的
+ * 	2、wait方法与notify方法必须要在同步代码块或同步函数中才能执行
+ * 	3、wait方法与notify方法必须由所对象调用
  */
 public class MyDemo4 {
 	public static void main(String[] args) {
@@ -32,7 +39,6 @@ class Producer implements Runnable{
 			i++;
 		}
 	}
-	
 }
 
 class Consumer implements Runnable{
@@ -45,7 +51,6 @@ class Consumer implements Runnable{
 			studen.cons();
 		}
 	}
-	
 }
 
 class Studen{
@@ -57,22 +62,22 @@ class Studen{
 //		System.out.println("Studen.producer()");
 		if(flag){
 			try {
-				wait();
+				this.wait();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-		}/*else {*/ //无聊何时醒来，都要存入一个新的，避免重复
+		}/*else {*/ //无论何时醒来，都要存入一个新的，避免重复
 			if(i%2==0){
-				System.out.println(this+"---->小明,男");
 				this.setName("小明");
 				this.setGender("男");
+				System.out.println("生产了"+this);
 			}else {
-				System.out.println(this+"---->小红,女");
 				this.setName("小红");
 				this.setGender("女");
+				System.out.println("生产了"+this);
 			}
 			flag=true;
-			notify();
+			this.notify();
 		/*}*/
 		
 	}
@@ -82,16 +87,16 @@ class Studen{
 //		System.out.println("Studen.cons()");
 		if(!flag){
 			try {
-				wait();
+				this.wait();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}else {
-			System.out.println(this);
+			System.out.println("消费了"+this);
 //			this.setName(null);
 //			this.setGender(null);
 			flag=false;
-			notify();
+			this.notify();
 		}
 	}
 	
