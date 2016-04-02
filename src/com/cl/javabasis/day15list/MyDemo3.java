@@ -78,6 +78,15 @@ public class MyDemo3 {
 			System.out.println(it.previous());
 		}
 		
+		/*
+		 * ListIterator it=list.listIterator();得到一个指针，指向第一个元素
+		 * it.hasNext()		指针指向的位置是否有元素，如果有true，没有false
+		 * it.next()		先取出指针指向的元素，指针向下移动
+		 * it.hasPrevious()		指针指向的位置的上一个位置是否有元素，如果有true，没有false
+		 * it.previous()		指针先向上移动，再取出指针指向的元素
+		 * 
+		 * */
+		
 		
 	}
 }

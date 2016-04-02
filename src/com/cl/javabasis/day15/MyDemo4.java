@@ -13,7 +13,7 @@ import java.util.Iterator;
 		迭代器的作用，抓取集合中的元素
 		
 		迭代器的方法：
-			hasNext()	问是否有下一个元素，如果有元素可以遍历返回true，否则返回false
+			hasNext()	当前指针是否有指向元素，如果有元素可以返回true，否则返回false
 			
 			next()	取出元素
 			
