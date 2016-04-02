@@ -15,12 +15,12 @@ import java.util.Set;
  */
 public class MyDemo2 {
 	public static void main(String[] args) {
-		int[] arr={11,2,4,2,10,11};
-		int[] arr2=method1(arr);
+		int[] arr={11,2,4,2,10,11,13};
+		int[] arr2=method(arr);
 		System.out.println(Arrays.toString(arr2));
 	}
 
-	private static int[] method1(int[] arr) {
+	private static int[] method(int[] arr) {
 		Arrays.sort(arr);
 		int count=0;
 		for(int i=0;i<arr.length-1;i++){
@@ -47,7 +47,7 @@ public class MyDemo2 {
 	}
 	private static int[] method2(int[] arr) {
 		Set<Integer> set=new HashSet<>();
-		for(int i=0;i<arr.length-1;i++){
+		for(int i=0;i<arr.length;i++){
 			set.add(arr[i]);
 		}
 		int[] arr2=new int[set.size()];
