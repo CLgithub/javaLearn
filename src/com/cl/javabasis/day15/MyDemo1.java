@@ -3,7 +3,7 @@ package com.cl.javabasis.day15;
 import java.util.ArrayList;
 import java.util.Collection;
 
-/*
+/**
 集合：集合是存储对象数据的集合容器。
 
 集合比数组的优势：
@@ -54,7 +54,7 @@ public class MyDemo1 {
 		/**
 		 * 删除方法
 		 */
-//		c.clear();//情况集合中的元素
+//		c.clear();//清空集合中的元素
 		System.out.println(c.remove("aa"));//指定集合中的元素进行删除，删除成功true，失败false
 //		c.removeAll(c2);//删除c集合中与c2的交集的元素
 		
