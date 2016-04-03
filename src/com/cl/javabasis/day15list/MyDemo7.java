@@ -1,5 +1,6 @@
 package com.cl.javabasis.day15list;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -25,20 +26,20 @@ import java.util.LinkedList;
  * 
  * LinkedList 常用特有的方法
  * 		1：方法介绍
-            addFirst(E e) 
-			addLast(E e) 
+            addFirst(E e) 把元素添加到集合的首位置上
+			addLast(E e) 把元素添加到集合的末尾
 			getFirst() 
 			getLast() 
 			removeFirst() 
 			removeLast() 
-			如果集合中没有元素，获取或者删除元
-			素抛：NoSuchElementException
+				如果集合中没有元素，获取或者删除元
+				素抛：NoSuchElementException
 		2：数据结构
-			1：栈 （1.6）
+			1：栈 （1.6）：主要是用于实现（模拟）堆栈数据结构的存储方式
 				先进后出
-				push() 
+				push() //将元素push到栈中（将元素插入到集合的开头出）
 				pop()
-			2：队列（双端队列1.5）
+			2：队列（双端队列1.5）：主要是为了可以使用linkedList模拟队列数据结构的存储方式
 				先进先出
 				offer()
 				poll()
@@ -48,12 +49,33 @@ import java.util.LinkedList;
  */
 public class MyDemo7 {
 	public static void main(String[] args) {
-		LinkedList linkedList=new LinkedList();
-		linkedList.add("小明");
-		linkedList.add("小红");
-		linkedList.add("小白");
-		linkedList.add("小黑");
+		LinkedList<String> list=new LinkedList();
+		list.add("小明");
+		list.add("小红");
+		list.add("小白");
+		list.add("小黑");
 		
-		System.out.println(linkedList);
+//		list.addFirst("aa");//把元素添加到集合的首位置上
+//		list.addLast("bb");//把元素添加到集合的末尾
+		
+//		System.out.println("获取集合的首位置元素："+list.getFirst());
+//		System.out.println("获取集合的末尾位置元素："+list.getLast());
+		
+//		System.out.println("删除集合首位置元素并返回"+list.removeFirst());
+//		System.out.println("删除集合末尾位置元素并返回"+list.removeLast());
+		
+//		list.push("aa");		//将元素push到栈中（将元素插入到集合的开头出）
+//		System.out.println("适合的首元素是:"+list.pop());				//移除并返回集合中的第一个元素
+		
+		list.offer("aa");		//将元素加到集合的末尾处
+		System.out.println("删除集合的首位置元素并返回："+list.poll());			//
+		
+		System.out.println(list);
+		
+		//逆向迭代器
+//		Iterator it=list.descendingIterator();
+//		while (it.hasNext()){
+//			System.out.println(it.next());
+//		}
 	}
 }
