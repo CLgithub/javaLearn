@@ -90,7 +90,7 @@ public class MyDemo4 {
 	
 }
 //方式一
-class Emp implements Comparable{
+class Emp implements Comparable<Emp>{
 	int id;
 	String name;
 	int salary;
@@ -111,7 +111,7 @@ class Emp implements Comparable{
 	 * 返回：负整数、零或正整数，根据此对象是小于、等于还是大于指定对象。 
 	 */
 	@Override
-	public int compareTo(Object o) {
+	public int compareTo(Emp o) {
 		Emp emp=(Emp) o;
 		System.out.println(this.name+"comare"+emp.name);
 		return this.salary-emp.salary;//按照薪水排序
@@ -139,13 +139,19 @@ class Emp1 {
 }
 
 //自定义一个比较器类
-class MyComparator implements Comparator{
+class MyComparator implements Comparator<Emp>{
 
 	@Override
+	public int compare(Emp o1, Emp o2) {
+		return o1.id-o2.id;
+	}
+
+	/*@Override
 	public int compare(Object o1, Object o2) {
 		Emp emp11=(Emp) o1;
 		Emp emp12=(Emp) o2;
 		return emp11.id-emp12.id;
-	}
+	}*/
+	
 	
 }
