@@ -1,4 +1,4 @@
-package com.cl.javabasis.day17;
+package com.cl.javabasis.day17map;
 
 import java.util.Collection;
 import java.util.HashMap;

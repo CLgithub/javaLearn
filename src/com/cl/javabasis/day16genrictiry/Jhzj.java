@@ -1,4 +1,4 @@
-package com.cl.javabasis.day17;
+package com.cl.javabasis.day16genrictiry;
 
 /*
 单列集合体系
@@ -56,6 +56,6 @@ package com.cl.javabasis.day17;
 		? extends Number 该类只能是Number或Number的子类		泛型上限
 		
 */
-public class MyDemo1 {
+public class Jhzj {
 
 }
