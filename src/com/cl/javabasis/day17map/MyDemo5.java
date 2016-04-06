@@ -17,7 +17,7 @@ import java.util.TreeMap;
 		2.往TreeMap添加元素的时候，如果元素的键不具备自然顺序，那么元素的键所属的类必须要实现Comparable接口，把比较规则定义在comparaTo方法中
 		3.往TreeMap添加元素的时候，如果元素的键不具备自然顺序，而且元素的键所属的类也没有实现Comparable接口，那么就必须在创建TreeMap的时候传入一个自定义比较器
 
-------------| HashTable
+------------| HashTable (了解，jdk1.0) 底层也是依赖了哈希表实现的，实现方式与HashMap是一致的，但是他是线程安全的，操作效率低
  * */
 public class MyDemo5 {
 	public static void main(String[] args) {
