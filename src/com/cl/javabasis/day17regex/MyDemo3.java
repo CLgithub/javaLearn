@@ -6,9 +6,9 @@ import java.util.Arrays;
 正则表达式注意是用于操作字符串的规则，正则表达式对字符串的操作主要有以下几种应用：
 	匹配：matches()
 	
-	切割：
+	切割：split()
 	
-	替换：
+	替换：replaceAll(String regex, String replacement)
 	
 	查找：
  * */
@@ -19,11 +19,12 @@ public class MyDemo3 {
 //		tesSplit1();
 //		testSplit2();
 		mathesEmail1();
+//		testReplaceAll1();
 	}
 	
-	//匹配手机号,第一位只能是1，第一二位3,5,7,8	长度11，全是数字
+	//匹配手机号,第一位只能是1，第一二位3,4,5,7,8	长度11，全是数字
 	public static void mathesPhoneN(String phoneN){
-		String reg="1[3578]\\d{9}";
+		String reg="1[34578]\\d{9}";
 		System.out.println(phoneN.matches(reg));
 	}
 	//匹配固定电话：区号-主机号	区号：首位是0，长度3~4，主机号：首位不能是0，长度是7~8
@@ -50,7 +51,23 @@ public class MyDemo3 {
 	//匹配一个邮箱，xxx@xxx.xx
 	public static void mathesEmail1(){
 		String myEmail="sdffd@gmail.com";
-		String reg="[a-zA-Z0-9]+@[a-zA-Z0-9\\.]+";
+//		String reg="[a-zA-Z0-9]+@[a-zA-Z0-9\\.]+";
+		String reg="[a-zA-Z1-9]\\w+@[a-zA-Z0-9]{2,}(\\.(com|cn|net)){1,2}";
 		System.out.println(myEmail.matches(reg));
 	}
+	
+	//替换电话
+	public static void testreplaceAll1(){
+		String str="请联系我：18745120312请联系我：18745120312请联系我：18745120312请联系我：18745120312请联系我：18745120312";
+		String reg="[1][34578]\\d{9}";
+		System.out.println(str.replaceAll(reg, "xxx"));
+	}
+	
+	//替换
+	public static void testReplaceAll1() {
+		String str="我我我我我要要要要做项项项目目目目目目目，嘻嘻嘻zzz隐隐约约y";//需求：还原成   我要做项目
+		String str2=str.replaceAll("(.)\\1+", "$1");//如果需要在replaceAll方法正则的外部引用组的内容，是使用“$组号”
+		System.out.println(str2);
+	}
+	
 }
