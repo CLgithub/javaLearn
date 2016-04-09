@@ -1,4 +1,4 @@
-package com.cl.javabasis.day18;
+package com.cl.javabasis.day18jdk15;
 /*
  jdk1.5新特性之-----可变参数
  
