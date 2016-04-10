@@ -1,7 +1,7 @@
 package com.cl.javabasis.day18jdk15;
 /*
  jdk1.5新特性之-----枚举
-问题： 某些方法接收到数据必须是固定范围内的，
+问题： 某些方法接收到数据必须是固定范围内的，比如方向，性别，季节，星期，月份……
 解决方案：自定义一个类，私有化构造函数，对外提供固定的几个对象
 
 jdk1.5对以上问题提出了新的解决方案：使用枚举
@@ -18,21 +18,31 @@ public class MyDemo6 {
 	}
 }
 
-// 自定义一个性别类
-class Gender {
+// 自定义一个性别类，其实就是枚举类的本质
+//class Gender {
+//	String value;
+//
+//	private Gender(String value) {
+//		this.value = value;
+//	}
+//	
+//	public final static Gender man=new Gender("男");
+//	public final static Gender woman=new Gender("女");
+//	
+//	@Override
+//	public String toString() {
+//		return value;
+//	}
+//}
+enum Gender{
+	man("男"),woman("女");
 	String value;
 
 	private Gender(String value) {
 		this.value = value;
 	}
+
 	
-	public final static Gender man=new Gender("男");
-	public final static Gender woman=new Gender("女");
-	
-	@Override
-	public String toString() {
-		return value;
-	}
 	
 }
 
