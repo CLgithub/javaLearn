@@ -59,9 +59,10 @@ public class MyDemo1 {
 	}
 	//方式二使用循环来读取文件的数据
 	public static void readTest2(){
+		long startTime=System.currentTimeMillis();
 		try{
 			//1.找到目标文件
-			File file=new File("E:/aaa/aaa.txt");
+			File file=new File("E:/手机/照片/照片2236.jpg");
 			//2.建立数据的输入通道
 			FileInputStream fileInputStream=new FileInputStream(file);
 			//3.使用流对象的方法，读取文件中的数据
@@ -74,6 +75,8 @@ public class MyDemo1 {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		long endTime=System.currentTimeMillis();
+		System.out.println("读取所花时间："+(endTime-startTime));
 	}
 	
 	//方式三使用缓冲数组读取。缺点：无法读取文件完整数据
@@ -102,13 +105,14 @@ public class MyDemo1 {
 	
 	//方式四：使用缓存数组配合循环一起读取
 	public static void readTest4() {
+		long startTime=System.currentTimeMillis();
 		try {
 			//1.找到目标文件
-			File file=new File("E:/aaa/aaa.txt");
+			File file=new File("E:/手机/照片/照片2236.jpg");
 			//2.建立数据的输入通道
 			FileInputStream fileInputStream=new FileInputStream(file);
 			//3.建立缓存数组配合循环读取文件的数据
-			byte[] buf=new byte[2];//存储每次读取到的数据
+			byte[] buf=new byte[1024];//存储每次读取到的数据，缓存数组的大写一般是1024的倍数，因为与计算机的处理单位有关，理论上缓存数组长度越大，读取效率越高
 			int length=0;//保存每次读取到的字节个数
 			while((length=fileInputStream.read(buf))!=-1){//一次读取buf长度的字节到buf中，length记录这次读取到了多少个字节，read方法如果都到了文件的末尾，会返回-1
 				System.out.println(new String(buf,0,length));
@@ -118,5 +122,7 @@ public class MyDemo1 {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		long endTime=System.currentTimeMillis();
+		System.out.println("读取所花时间："+(endTime-startTime));
 	}
 }
