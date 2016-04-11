@@ -37,7 +37,8 @@ public class MyDemo1 {
 	public static void main(String[] args) {
 //		readTest1();
 //		readTest2();
-		readTest3();
+//		readTest3();
+		readTest4();
 	}
 	
 	//读取方式一：无法读取文件完整数据
@@ -95,6 +96,26 @@ public class MyDemo1 {
 			//4.关闭资源		实际上就是释放资源
 			fileInputStream.close();
 		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	//方式四：使用缓存数组配合循环一起读取
+	public static void readTest4() {
+		try {
+			//1.找到目标文件
+			File file=new File("E:/aaa/aaa.txt");
+			//2.建立数据的输入通道
+			FileInputStream fileInputStream=new FileInputStream(file);
+			//3.建立缓存数组配合循环读取文件的数据
+			byte[] buf=new byte[2];//存储每次读取到的数据
+			int length=0;//保存每次读取到的字节个数
+			while((length=fileInputStream.read(buf))!=-1){//一次读取buf长度的字节到buf中，length记录这次读取到了多少个字节，read方法如果都到了文件的末尾，会返回-1
+				System.out.println(new String(buf,0,length));
+			}
+			//4.关闭资源		实际上就是释放资源
+			fileInputStream.close();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
