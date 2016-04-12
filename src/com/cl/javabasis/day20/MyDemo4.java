@@ -56,23 +56,23 @@ public class MyDemo4 {
 			throw new RuntimeException(e);
 		} finally {
 			//关闭资源	原则：先开后关，后开先关
-			if(null!=outputStream){
-				try {
+			try {
+				if(null!=outputStream){
 					outputStream.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-					throw new RuntimeException(e);
-				}
-			}
-			if(null!=inputStream){
+				} 
+			}catch (IOException e) {
+				e.printStackTrace();
+				throw new RuntimeException(e);
+			}finally {
 				try {
-					inputStream.close();
+					if(null!=inputStream){
+						inputStream.close();
+					}
 				} catch (IOException e) {
 					e.printStackTrace();
 					throw new RuntimeException(e);
 				}
 			}
-			
 		}
 	}
 }
