@@ -27,7 +27,8 @@ public class MyDemo5 {
 	//try里面有格return语句，finally里面也会执行，在teturn前执行
 	public static int method3() {
 		try {
-			method4();
+			System.out.println("MyDemo5.method3()");
+//			method4();
 			return -1;
 		} catch (Throwable e) {
 			e.printStackTrace();
