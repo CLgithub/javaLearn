@@ -36,9 +36,9 @@ import java.io.FileNotFoundException;
 public class MyDemo1 {
 	public static void main(String[] args) {
 //		readTest1();
-//		readTest2();
+		readTest2();
 //		readTest3();
-		readTest4();
+//		readTest4();
 	}
 	
 	//读取方式一：无法读取文件完整数据
@@ -62,7 +62,7 @@ public class MyDemo1 {
 		long startTime=System.currentTimeMillis();
 		try{
 			//1.找到目标文件
-			File file=new File("E:/手机/照片/照片2236.jpg");
+			File file=new File("E:/aaa/aaa.txt");
 			//2.建立数据的输入通道
 			FileInputStream fileInputStream=new FileInputStream(file);
 			//3.使用流对象的方法，读取文件中的数据
