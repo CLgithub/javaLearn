@@ -8,7 +8,15 @@ import java.io.IOException;
 
 
 /*
- *  练习：使用字符流拷贝一个文本文件，接着只用字符流拷贝一个图片（观察图片的大小变化，思考为什么会这样子）
+ 练习：使用字符流拷贝一个文本文件，接着只用字符流拷贝一个图片（观察图片的大小变化，思考为什么会这样子）
+ 
+ 何时使用字符流，何时使用字符流
+
+使用字符流的应用场景：如果是读写字符数据的时候，使用字符流
+
+使用字节流的应用场景：如果读写的数据都不需要转换为字符的时候，就使用字节流
+	
+ 
  */
 public class MyDemo5 {
 	public static void main(String[] args) {
@@ -30,7 +38,7 @@ public class MyDemo5 {
 		int leng=0;
 		char[] buf=new char[1024]; 
 		while((leng=fileReader.read(buf))!=-1){
-			fileWriter.write(new String(buf,0,leng));
+			fileWriter.write(buf,0,leng);
 		}
 		
 		fileWriter.close();

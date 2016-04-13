@@ -40,7 +40,7 @@ public class MyDemo2 {
 		int leng=0;
 		byte[] buf=new byte[1024];
 		while((leng=fileInputStream.read(buf))!=-1){
-			System.out.print(new String(buf,0,leng));
+			System.out.print(new String(buf,0,leng));//其实也是借用了字符串的解码功能，同事也存在风险（比如1024刚好读到一个中文一半的时候）
 		}
 		
 		
