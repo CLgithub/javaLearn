@@ -19,6 +19,8 @@ import java.io.IOException;
  FileReader的用法：
  	1.找到目标文件
  	2.建立数据输出通道
+ 	3.读取数据
+ 	4.关闭资源
  
  */
 public class MyDemo3 {
