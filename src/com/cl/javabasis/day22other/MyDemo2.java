@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.SequenceInputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Vector;
 
 /*
@@ -14,9 +15,48 @@ import java.util.Vector;
  */
 public class MyDemo2 {
 	public static void main(String[] args) throws IOException {
-		method1();
+//		method1();
+		m1();
+		m2();
 	}
 	
+	//分解
+	public static void m1() throws IOException {
+		//找到原文件
+		File file=new File("/Users/L/Downloads/aaa/醉清风.mp3");//原文件
+		File dir=new File("/Users/L/Downloads/aaa/分解");
+		FileInputStream sourceFIS=new FileInputStream(file);
+		dir.mkdir();
+		
+		int length=0;
+		byte[] buf=new byte[1024*1024];
+		for(int i=0;(length=sourceFIS.read(buf))!=-1;i++){
+			FileOutputStream fos1=new FileOutputStream(new File(dir,"part"+i+".mp3"));
+			fos1.write(buf, 0, length);
+			fos1.close();
+		}
+		sourceFIS.close();
+	}
+	//合并
+	public static void m2() throws IOException{
+		File dir=new File("/Users/L/Downloads/aaa/分解");//原文件
+		File file2=new File("/Users/L/Downloads/aaa/醉清风x.mp3");//目标文件
+		Vector<FileInputStream> fiss=new Vector<>();
+		for(File partf:dir.listFiles()){
+			fiss.add(new FileInputStream(partf));
+		}
+		//创建序列流
+		SequenceInputStream fInputStream=new SequenceInputStream(fiss.elements());
+		//建立输出通道
+		FileOutputStream fos=new FileOutputStream(file2);
+		int length=0;
+		byte[] buf=new byte[1024];
+		while((length=fInputStream.read(buf))!=-1){
+			fos.write(buf, 0, length);
+		}
+		fos.close();
+		fInputStream.close();
+	}
 	
 	public static void method1() throws IOException {
 		//找到原文件
@@ -53,7 +93,7 @@ public class MyDemo2 {
 			fiss.add(new FileInputStream(f));
 		}
 		//合并文件
-		File file2=new File("/Users/L/Downloads/aaa/醉清风x.mp3");//原文件
+		File file2=new File("/Users/L/Downloads/aaa/醉清风x.mp3");//目标文件
 		FileOutputStream outputStream2=new FileOutputStream(file2);
 		
 		SequenceInputStream fInputStream=new SequenceInputStream(fiss.elements());
