@@ -60,8 +60,8 @@ package com.cl.javabasis.day21;
 				 	把低八位的二进制数据写出，其他二十四位数据全部丢弃
 				 	
 	  注意：凡是缓存流都不具备读写数据的能力。
-	 ---------------| BufferedInputStream	缓存输入字节流	缓存输入字节流的出现主要是为了提高读取文件数据的效率。其实 该类内部只不过是维护了一个8kb的字节数组而已。
-	 ---------------| BufferedOutputStream	缓存输出字节流	内部也是维护了一个8kb的字节数组而已
+	 ----------| BufferedInputStream	缓存输入字节流	缓存输入字节流的出现主要是为了提高读取文件数据的效率。其实 该类内部只不过是维护了一个8kb的字节数组而已。
+	 ----------| BufferedOutputStream	缓存输出字节流	内部也是维护了一个8kb的字节数组而已
 					  BufferedOutputStream要注意的细节
 					 	1.使用BufferedOutputStream写数据的时候，它的write方法是先把数据写到他内部维护的字节数组中
 					 	2.使用BufferedOutputStream写数据的时候，它的write方法是先把数据写到他内部维护的字节数组中，如果需要把数据真正的写到硬盘上，
@@ -80,8 +80,8 @@ package com.cl.javabasis.day21;
 					使用"new FileWriter(file,boolean)"构造方法，第二个参数为true
 					
 	注意：凡是缓存流都不具备读写数据的能力。
- 	---------------| BufferedReader	缓存字符输入流	缓存字符输入流出现的目的是为了提高读取文件字符的效率和拓展了FileReader的功能。其实该类内部也是维护了一个字符数组（8k字符）
- 	---------------| BufferedWriter 缓存输出字符流	缓存输出字符流作用：提高FileWriter的写字符数据的效率与拓展FileWriter的功能。
+ 	----------| BufferedReader	缓存字符输入流	缓存字符输入流出现的目的是为了提高读取文件字符的效率和拓展了FileReader的功能。其实该类内部也是维护了一个字符数组（8k字符）
+ 	----------| BufferedWriter 缓存输出字符流	缓存输出字符流作用：提高FileWriter的写字符数据的效率与拓展FileWriter的功能。
  					BufferedWriter内部只不过是提供了一个8192长度(8k)的字符数组作为缓冲区而已，拓展了FileWriter的功能。
  */
 public class IOzj {
