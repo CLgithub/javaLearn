@@ -22,18 +22,21 @@ import java.io.Serializable;
  	3.serialVersionUID 是用于记录class文件的版本信息的，serialVersionUID这个数字是通过一个类名，成员，包名，工程名算出来的一个数字
  	4. 使用ObjectInputStream反序列化的时候，ObjeectInputStream会先读取文件中的serialVersionUID，然后与本地的class文件的serialVersionUID
  	5.如果序列化与反序列化的时候可以会修改类的成员，那么最好一开始就可以给这个类指定一个serialVersionUID，那么在序列化与反序列化的时候，jvm都不会在自己去算这个serialVersionUID了。
+ 	6.如果一个对象某个数据不想被序列化到硬盘上，可以使用transient（透明）关键字修饰
+ 	7.如果一个类维护了另外一个类的引用，另外一个类也需要实现Serializable接口
  
  */
 public class MyDemo3 {
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		//把user对象的信息持久化的存储
-//		writeObj();
-		readObj();
+		writeObj();
+//		readObj();
 	}
 	
 	//定义一个方法把对象的信息写到硬盘上－－－－－对象的序列化
 	public static void writeObj() throws IOException {
-		User user=new User("admin", "123");
+		Address address=new Address("中国", "上海");
+		User user=new User("admin", "123", 15,address);
 		//1.找到目标文件
 		File objF=new File("/Users/L/Downloads/aaa/obj");
 		//2.建立数据的输出流通道
@@ -68,18 +71,46 @@ class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 	String userName;
 	String password;
-	int age;
+	transient int age;	//transient 透明
+	Address address;
 
 	public User(String userName, String password) {
 		this.userName = userName;
 		this.password = password;
 	}
+	
+	
+
+	public User(String userName, String password, int age, Address address) {
+		this.userName = userName;
+		this.password = password;
+		this.age = age;
+		this.address=address;
+	}
 
 	@Override
 	public String toString() {
-		return "[userName=" + userName + ", password=" + password + ", age=" + age + "]";
+		return "User [userName=" + userName + ", password=" + password + ", address=" + address + "]";
 	}
 
+
+
+
+}
+class Address implements Serializable{
+	private static final long serialVersionUID = 1L;
+	String country;
+	String city;
+
+	public Address(String country, String city) {
+		this.country = country;
+		this.city = city;
+	}
+
+	@Override
+	public String toString() {
+		return "Address [country=" + country + ", city=" + city + "]";
+	}
 	
 	
 	
