@@ -83,7 +83,7 @@ package com.cl.javabasis.day2;
 			34(十六进制)-----> 52（十进制）
 
 */
-class Demo4{
+public class Demo4{
 
 	public static void main(String[] args){
 		/*

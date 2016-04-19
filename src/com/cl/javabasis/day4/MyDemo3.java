@@ -12,12 +12,12 @@ public class MyDemo3 {
 	 */
 	public static void main(String[] args) {
 		String string="abc";
-		System.out.println(string+'\b');	//退格键，相当于Back Space
-		System.out.println(string+'\t');	//table键
-		System.out.println(string+'\n');	//换行 均为windows下，晚上回去试试osx
-		System.out.println(string+'\r');	//回车符
-		System.out.println(string+'\\');	//输出\
-		System.out.println(string+'\'');	//输出'
-		System.out.println(string+'\"');	//输出"
+		System.out.println("1:"+string+'\b');	//退格键，相当于Back Space
+		System.out.println("2:"+string+'\t');	//table键
+		System.out.println("3:"+string+'\n');	//换行 均为windows下，晚上回去试试osx
+		System.out.println("4:"+string+'\r');	//回车符
+		System.out.println("5:"+string+'\\');	//输出\
+		System.out.println("6:"+string+'\'');	//输出'
+		System.out.println("7:"+string+'\"');	//输出"
 	}
 }

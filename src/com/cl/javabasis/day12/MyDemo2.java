@@ -14,12 +14,12 @@ public class MyDemo2 {
 		String str3=new String("hello");
 		String str4=new String("hello");
 		
-		/*System.out.println(str1.hashCode());
-		System.out.println(str2.hashCode());
-		System.out.println(str3.hashCode());
-		System.out.println(str4.hashCode());*/
+//		System.out.println(str1.hashCode());
+//		System.out.println(str2.hashCode());
+//		System.out.println(str3.hashCode());
+//		System.out.println(str4.hashCode());
 		
-		//2.1比较
+		//2.1比较	==比较栈内存的内容，equals比较堆内存的内容
 //		System.out.println(str1==str2);
 //		System.out.println(str1.equals(str2));
 //		
@@ -29,9 +29,16 @@ public class MyDemo2 {
 //		System.out.println(str3==str4);
 //		System.out.println(str3.equals(str4));
 		
+//		Person p1=new Person("x", 10);
+//		Person p2=new Person("x", 10);
+//		System.out.println(p1==p2);
+//		System.out.println(p1.equals(p2));
+		
+		
+		
 //		//2.2获取
 //		System.out.println("判断某位置的字符:"+str1.charAt(3));//判断某位置的字符
-//		System.out.println("查找某字符第一次出现在字符串中的位置:"+str1.indexOf('a'));//查找某字符第一次出现在字符串中的位置
+//		System.out.println("查找某字符第一次出现在字符串中的位置:"+str1.indexOf('l'));//查找某字符第一次出现在字符串中的位置
 //		System.out.println("查找某字符最后出现在字符串中的位置:"+str1.lastIndexOf('l'));//查找某字符最后出现在字符串中的位置
 //		
 //		//2.3判断
@@ -42,7 +49,7 @@ public class MyDemo2 {
 //		System.out.println("忽略大小写比较堆内存中的内容:"+str1.equalsIgnoreCase("Hello"));//忽略大小写比较堆内存中的内容
 //		
 //		//2.4转换
-//			//将字符数组转换为字符串
+			//将字符数组转换为字符串
 //		String str5=new String(new char[]{'t','e','s','t'});//String(char[] value)
 //		System.out.println(str5);
 //		char[] buff=new char[]{'t','e','s','t','2'};
@@ -50,8 +57,8 @@ public class MyDemo2 {
 //		System.out.println(str6);
 //		String str7=new String(buff);//String(char[] value)
 //		System.out.println(str7);
-//		System.out.println(str7.valueOf('a'));
-//			//将字符串转换为字符数
+//		System.out.println(String.valueOf('a'));
+			//将字符串转换为字符数
 //		char[] cs=str7.toCharArray();
 //		System.out.println(Arrays.toString(cs));
 		
@@ -68,4 +75,17 @@ public class MyDemo2 {
 		
 		
 	}
+}
+class Person{
+	String name;
+	int age;
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", age=" + age + "]";
+	}
+	
 }

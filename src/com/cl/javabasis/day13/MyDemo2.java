@@ -17,8 +17,8 @@ import org.omg.SendingContext.RunTime;
  */
 public class MyDemo2 {
 	public static void main(String[] args) {
-		method1();
-//		method2();
+//		method1();
+		method2();
 	}
 	
 	static void method1() {

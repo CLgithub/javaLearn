@@ -7,8 +7,8 @@ import java.util.Random;
  */
 public class MyDemo4 {
 	public static void main(String[] args) {
-//		method1();
-		method2();
+		method1();
+//		method2();
 	}
 	
 	static void method1(){

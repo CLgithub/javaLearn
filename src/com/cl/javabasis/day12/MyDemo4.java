@@ -5,7 +5,7 @@ import javax.security.auth.x500.X500Principal;
 /**
  * 由于String是不可变的，所以导致String对象泛滥，在频繁改变字符串对象的应用中，
  * 需要使用可变的字符串缓冲区类。
- * StringBuffer其实就是个字符数组
+ * StringBuffer 其实就是个字符数组
  * 特点：
 	1.默认缓冲区的容量是16。(看源码)
 	2.StringBuffer  ： 线程安全的所有的缓冲区操作方法都是同步的。效率很低。
@@ -72,7 +72,7 @@ public class MyDemo4 {
 //		testIndexof();
 //		testCapacity();
 //		testcharAt();
-		testToStirng();
+//		testToStirng();
 	}
 	
 	static void method1(){
