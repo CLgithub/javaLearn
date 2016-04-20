@@ -23,7 +23,8 @@ public class SynchTest {
 
 class Quanqian extends Thread{
 	static int qian=5000;
-	static String syn=new String("");
+//	static String syn=new String("");
+	String syn="";
 	int you=0;
 	public void run() {
 		while(true){
@@ -34,6 +35,11 @@ class Quanqian extends Thread{
 					you+=100;
 				}else {
 					break;
+				}
+				try {
+					Thread.sleep(1);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
 				}
 			}
 		}

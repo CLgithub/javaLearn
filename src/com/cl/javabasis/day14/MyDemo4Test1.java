@@ -27,8 +27,18 @@ class Producer1 implements Runnable{
 		int i=0;
 		while(true){
 			synchronized (product1) {
-				product(i);
-				i++;
+				if(product1.flag){
+					try {
+						product1.wait();
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}else {
+					product(i);
+					i++;
+					product1.flag=true;
+					product1.notify();
+				}
 			}
 		}
 	}
@@ -65,7 +75,18 @@ class Consumer1 implements Runnable{
 	}
 	private void consumer() {
 		synchronized (product1) {
-			System.out.println("消费了："+product1);
+			if(product1.flag){
+				System.out.println("消费了："+product1);
+				product1.flag=false;
+				product1.notify();
+			}else {
+				try {
+					product1.wait();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+			
 		}
 	}
 }

@@ -14,7 +14,7 @@ package com.cl.javabasis.day14;
  * wait和notify方法要注意的事项：
  * 	1、wait方法与notify方法是属于object对象的
  * 	2、wait方法与notify方法必须要在同步代码块或同步函数中才能执行
- * 	3、wait方法与notify方法必须由所对象调用
+ * 	3、wait方法与notify方法必须由锁对象调用
  * 
  * wait():一个线程如果执行了wait()方法，那么该线程就会进入一个以锁对象为标识符的线程池中等待
  * notify():如果一个线程池执行了notify()方法，那么就会唤醒锁对象为标识符的线程中等待线程中其中一个
