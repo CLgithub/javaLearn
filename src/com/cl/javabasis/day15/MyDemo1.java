@@ -11,7 +11,7 @@ import java.util.Collection;
 	2. 集合的长度是会发生变化的，数组的长度是固定的。
 	
 
--------| Collection  单例集合的跟接口。 
+-------| Collection  单例集合的根接口。 
 ----------| List  如果是实现了List接口的集合类，具备的特点： 有序，可重复。
 ----------| Set   如果是实现了Set接口的集合类，具备特点： 无序，不可重复。
 
@@ -24,8 +24,8 @@ Collection接口中的方法：
 		clear() 
 		remove(Object o) 
 		
-		removeAll(Collection  c) 
-		retainAll(Collection  c) 
+		removeAll(Collection  c) //删除调用者中与c的交集
+		retainAll(Collection  c) //只保留调用者中与c的交集
 	查看
 		size() 
 	判断
@@ -48,8 +48,8 @@ public class MyDemo1 {
 		c2.add("eee");
 		c2.add("aaa");
 		c.addAll(c2);
-		System.out.println(c2);
-		
+		System.out.println("c2:"+c2);
+		System.out.println("c:"+c);
 		
 		/**
 		 * 删除方法

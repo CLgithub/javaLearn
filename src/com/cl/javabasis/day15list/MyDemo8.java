@@ -18,19 +18,19 @@ import java.util.LinkedList;
  */
 public class MyDemo8 {
 	public static void main(String[] args) {
-		/*StackList stackList=new StackList();
-		stackList.add("小明");
-		stackList.add("小红");
-		stackList.add("小白");
-		stackList.add("小黑");
-		
+//		StackList stackList=new StackList();
+//		stackList.add("小明");
+//		stackList.add("小红");
+//		stackList.add("小白");
+//		stackList.add("小黑");
+//		
 //		System.out.println(stackList.pop());
 //		System.out.println(stackList.pop());
 //		System.out.println(stackList.pop());
-		int size=stackList.size();
-		for (int i = 0; i < size;i++) {
-			System.out.println(stackList.pop());
-		}*/
+//		int size=stackList.size();
+//		for (int i = 0; i < size;i++) {
+//			System.out.println(stackList.pop());
+//		}
 		
 		MyLinkedList myLinkedList=new MyLinkedList();
 		myLinkedList.add("小明");

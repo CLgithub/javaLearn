@@ -44,11 +44,11 @@ public class MyDemo3 {
 //			System.out.println("元素："+it.previous());
 //		}
 		
-//		while (it.hasNext()){
-//			it.next();
+//		while (it.hasNext()){//当前指向的位置是否有元素
+//			it.next();		//先取出指针指向的元素再向下移动
 //		}
-//		while(it.hasPrevious()){
-//			System.out.println("元素："+it.previous());
+//		while(it.hasPrevious()){//指针当前位置的上一个位置是否有元素
+//			System.out.println("元素："+it.previous());//先向上移动，后取出指针指向的元素
 //		}
 		
 //		it.next();
@@ -65,18 +65,18 @@ public class MyDemo3 {
  * 		一：使用get
  * 		二：使用迭代器正向遍历
  * 		三：使用迭代器逆向遍历*/
-		/*for (int i = 0; i < list.size();i++) {
-			System.out.println(list.get(i));
-		}*/
-		/*while(it.hasNext()){
-			System.out.println(it.next());
-		}*/
-		while(it.hasNext()){
-			it.next();
-		}
-		while(it.hasPrevious()){
-			System.out.println(it.previous());
-		}
+//		for (int i = 0; i < list.size();i++) {
+//			System.out.println(list.get(i));
+//		}
+//		while(it.hasNext()){
+//			System.out.println(it.next());
+//		}
+//		while(it.hasNext()){
+//			it.next();
+//		}
+//		while(it.hasPrevious()){
+//			System.out.println(it.previous());
+//		}
 		
 		/*
 		 * ListIterator it=list.listIterator();得到一个指针，指向第一个元素

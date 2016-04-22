@@ -39,7 +39,7 @@ public class MyDemo4 {
 //		System.out.println("获取元素"+it.next());
 //		System.out.println("获取元素"+it.next());
 //		System.out.println("获取元素"+it.next());
-////		System.out.println("获取元素"+it.next());//NoSuchElementException	没有元素的异常
+//		System.out.println("获取元素"+it.next());//NoSuchElementException	没有元素的异常
 //		System.out.println("有元素可以遍历吗"+it.hasNext());
 		
 //		while (it.hasNext()){
@@ -49,9 +49,9 @@ public class MyDemo4 {
 		//it.hasNext()	当前指针是否有指向元素，有返回true，没有返回false，看源码一句就可以实现cursor != size;
 		//it.next()		获取当前指针指向的元素并返回当前元素，然后指针向下移动一个单元
 		
-		it.next();
-		it.next();
-		it.remove();//除以迭代器最后一次返回的元素，
+//		it.next();
+//		it.next();
+//		it.remove();//除移迭代器最后一次返回的元素，
 		
 		//相当于清空c
 //		while (it.hasNext()){

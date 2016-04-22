@@ -52,7 +52,7 @@ public class MyDemo2 {
 //		System.out.println("找出指定元素第一次出现在集合中的索引值："+list.lastIndexOf("小黑"));
 		
 //		System.out.println("集合的元素"+list);
-		list=list.subList(1, 5);//返回列表中指定的 fromIndex（包括 ）和 toIndex（不包括）之间的部分list。
+//		list=list.subList(1, 5);//返回列表中指定的 fromIndex（包括 ）和 toIndex（不包括）之间的部分list。
 		
 //		list.set(3, "x");//使用指定的元素替换指定索引位置的元素
 		

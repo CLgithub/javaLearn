@@ -61,15 +61,15 @@ public class MyDemo7 {
 //		System.out.println("获取集合的首位置元素："+list.getFirst());
 //		System.out.println("获取集合的末尾位置元素："+list.getLast());
 		
-//		System.out.println("删除集合首位置元素并返回"+list.removeFirst());
-//		System.out.println("删除集合末尾位置元素并返回"+list.removeLast());
+//		System.out.println("删除集合首位置元素并返回："+list.removeFirst());
+//		System.out.println("删除集合末尾位置元素并返回："+list.removeLast());
 		
 //		list.push("aa");		//将元素push到栈中（将元素插入到集合的开头出）
-//		System.out.println("适合的首元素是:"+list.pop());				//移除并返回集合中的第一个元素
+//		System.out.println("集合的首元素是:"+list.pop());				//移除并返回集合中的第一个元素
 		
 		list.offer("aa");		//将元素加到集合的末尾处
 		System.out.println("删除集合的首位置元素并返回："+list.poll());			//
-		
+//		
 		System.out.println(list);
 		
 		//逆向迭代器
