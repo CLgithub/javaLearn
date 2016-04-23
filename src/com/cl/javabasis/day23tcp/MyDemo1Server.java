@@ -14,6 +14,11 @@ import java.net.Socket;
  	2.接收客户端的连接产生一个socket
  	3.获取到对应到流对象 写出或读取数据
  	4.关闭资源
+ 	
+ 	
+ 为什么serversocket不设计一个getOutputStream和getInputStream呢？
+
+
  */
 
 //tcp服务端

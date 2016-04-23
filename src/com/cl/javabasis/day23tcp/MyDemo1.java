@@ -32,7 +32,6 @@ import java.net.UnknownHostException;
  	2.获取到对应到流对象 写出或读取数据
  	3.关闭资源
  	
- 	
  */
 
 //tcp客户端
