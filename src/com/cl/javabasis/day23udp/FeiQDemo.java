@@ -1,4 +1,4 @@
-package com.cl.javabasis.day23demo2;
+package com.cl.javabasis.day23udp;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

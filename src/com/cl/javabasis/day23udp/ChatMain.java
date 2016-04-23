@@ -1,4 +1,4 @@
-package com.cl.javabasis.day23demo3;
+package com.cl.javabasis.day23udp;
 
 public class ChatMain {
 	public static void main(String[] args) {

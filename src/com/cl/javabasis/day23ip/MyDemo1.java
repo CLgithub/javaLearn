@@ -1,4 +1,4 @@
-package com.cl.javabasis.day23demo1;
+package com.cl.javabasis.day23ip;
 
 import java.io.IOException;
 import java.net.InetAddress;
