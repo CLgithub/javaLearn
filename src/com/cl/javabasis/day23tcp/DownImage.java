@@ -36,8 +36,9 @@ class ImageServer extends Thread{
 
 	@Override
 	public void run() {
+		System.out.println("开始下载");
 		try {
-			FileInputStream imgIS=new FileInputStream("/Users/L/Downloads/aaa/img.PNG");		//得到图片输入通道
+			FileInputStream imgIS=new FileInputStream("/Users/L/Downloads/我是谁/我是谁：没有绝对安全的系统.Who.Am.I.2014.BD1080P.X264.AAC.German.CHS.Mp4Ba.mp4");		//得到图片输入通道
 			OutputStream socketOut=socket.getOutputStream();				//得到socket输出通道
 			
 			byte[] buf=new byte[1024];
