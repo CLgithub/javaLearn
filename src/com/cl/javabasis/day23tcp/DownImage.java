@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * 1. 编写一个服务端可以给多个客户端发送图片。 （多线程）
@@ -17,6 +19,7 @@ import java.net.Socket;
 public class DownImage {
 	public static void main(String[] args) throws IOException {
 		ServerSocket serverSocket=new ServerSocket(8099);
+		
 		while(true){
 			Socket socket=serverSocket.accept();
 			new ImageServer(socket).start();
@@ -25,7 +28,7 @@ public class DownImage {
 }
 class ImageServer extends Thread{
 	private Socket socket;
-	
+	private static HashSet<String> set=new HashSet<>();
 	public ImageServer(Socket socket) {
 		this.socket = socket;
 	}
@@ -40,8 +43,12 @@ class ImageServer extends Thread{
 			byte[] buf=new byte[1024];
 			int length=0;
 			while((length=imgIS.read(buf))!=-1){
-				socketOut.write(buf);
+				socketOut.write(buf,0,length);
 			}
+			//socket.getInetAddress().getHostAddress() 获取对方IP
+			set.add(socket.getInetAddress().getHostAddress().toString());
+			System.out.println(set);
+			System.out.println("当前下载的人数是："+set.size());
 			socket.close();
 			imgIS.close();
 		} catch (IOException e) {
