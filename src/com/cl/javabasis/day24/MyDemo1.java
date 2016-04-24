@@ -43,6 +43,16 @@ package com.cl.javabasis.day24;
 静态代码块:静态代码块是静态代码块所属的类被加载到内存的时候执行的。
 	静态代码块的应用场景： 以后主要用于准备一个项目的初始化工作。 
 	比如： 从配置配置文件中读取数据库用户名与密码。
+	
+	
+ instanceof  判断指定的对象是否属于某种类别。
+ instanceof 使用前提： 判断的对象与类别必须存在继承或者实现的关系。
+  
+ instanceof 使用格式：
+ 		对象 instanceof 类别。
+ 
+ 有多态才可能使用到instanceof关键字，
+ 主要的应用场景： 数据类型强转之前的判断。
  */
 public class MyDemo1 {
 //	{
