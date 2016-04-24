@@ -53,6 +53,9 @@ package com.cl.javabasis.day24;
  
  有多态才可能使用到instanceof关键字，
  主要的应用场景： 数据类型强转之前的判断。
+ 
+ 
+ 
  */
 public class MyDemo1 {
 //	{
