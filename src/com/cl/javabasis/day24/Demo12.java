@@ -15,9 +15,7 @@ import java.util.List;
 	2. 多态用于返回值类型的时候可以返回更多类型的参数。
 
 迭代器的作用： 用于获取集合中的元素。 	
-	
  内部类： 
- 
 内部类的好处： 内部类可以直接访问外部类的成员。
  
  */
@@ -57,7 +55,7 @@ public class Demo12 {
 		list.add(19);
 		list.add(12);
 		list.add(6);
-		
+		//看源码iterator()返回的就是一个arraylist里的一个内部类，该内部类继承Iterator类，设计成这样的话内部类就可以字访问object[]数组的内容
 		Iterable<Integer> it = (Iterable<Integer>) list.iterator();
 		
 		List<Integer> list2 = list.subList(1, 3);
