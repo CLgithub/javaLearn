@@ -1,4 +1,7 @@
-package com.cl.javabasis.day16genrictiry;
+package com.cl.javabasis.day24;
+
+import java.util.HashSet;
+import java.util.Iterator;
 
 /*
 单列集合体系
@@ -36,41 +39,68 @@ package com.cl.javabasis.day16genrictiry;
 		3.往TreeMap添加元素的时候，如果元素的键不具备自然顺序，而且元素的键所属的类也没有实现Comparable接口，那么就必须在创建TreeMap的时候传入一个自定义比较器
 
 ------------| HashTable (了解，jdk1.0) 底层也是依赖了哈希表实现的，实现方式与HashMap是一致的，但是他是线程安全的，操作效率低
-	
 		
-泛型	 jdk1.5出现的，
-自定义泛型：可理解为数据类型变量，如String、Integer等，（不能使用基本数据类型）
-泛型的好处：
-	1.将运行时异常提前至编译时
-	2.减少了无谓的强制类型转换
 
-	
-	泛型方法	
-		定义格式：修饰符	<声明自定义泛型>返回值类型	方法名(自定义泛型名	变量名...){}
-		泛型方法注意：
-			1.自定义泛型的具体数据类型是在调用方法时传入实参时确定的
-			2.自定义泛型的命名只要符合自定义标识符的命名规则即可，但是我们一般使用T或E
-			2.如果调用方法是不指定具体数据类型，则泛型类型为Object类型
-	
-	泛型类
-		定义格式：class 类名<声明自定义泛型>{}
-		泛型类要注意:
-			1.自定义泛型的具体数据类型是在用该类创建对象时指定具体数据类型的。
-			2.如果一个类已经自定义了泛型，使用该类创建对象的时候如果没有指定泛型的具体数据类型，那么默认为Object类型。
-			3. 静态的函数不能使用类上自定义的泛型，如果静态函数需要使用，必须要在函数上自定义泛型。
-	
-	泛型接口
-		定义格式：interface 接口名<声明自定义泛型>{}
-		泛型接口要注意：
-			1.自定义泛型的具体数据类型是在实现该接口的时候指定具体数据类型的
-			2.如果实现接口的时候没有指定接口上 的自定义泛型的具体数据类型，那么默认为Object数据类型。
-			3.如果想在创建具体对象是再确定泛型具体数据类型，那么需要在接口实现类上声明：class   类名<T>	implements	接口名<T>{}
+ 
+ */
+public class Demo15 {
+	public static void main(String[] args) {
+		//不允许重复的书名存在
+		HashSet<Book> books=new HashSet<>();
+		books.add(new Book("java……书", 34));
+		books.add(new Book("java神书", 78));
+		books.add(new Book("java神书", 78));
 		
-	泛型上下限
-		? super Integer 该类只能是Integer或Integer的父类		泛型下限
-		? extends Number 该类只能是Number或Number的子类		泛型上限
-		
-*/
-public class Jhzj {
+		//修改书名
+		Iterator<Book> it=books.iterator();
+		while(it.hasNext()){
+			Book book=it.next();
+			if(book.name.equals("java神书")){
+//			if(book.equals(new Book("java神书", 78))){
+				book.name="java编程思想";
+			}
+		}
+		System.out.println(books);
 
+		//为什么改名后就删除不了了?因为这本书一开始的位置是通过“java神书”去计算的，之后改了名字，现在用“java编程思想”去计算删除，已经不是一个位置了
+		books.remove(new Book("java神书", 78));
+//		books.add(new Book("java编程思想", 78));
+		System.out.println(books);
+	}
+}
+class Book{
+	String name;
+	double price;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	@Override
+	public String toString() {
+		return "Book [name=" + name + ", price=" + price + "]";
+	}
+	public Book(String name, double price) {
+		this.name = name;
+		this.price = price;
+	}
+	@Override
+	public int hashCode() {
+		return this.name.hashCode();
+	}
+	@Override
+	public boolean equals(Object obj) {
+		Book book=(Book) obj;
+		return book.name.equals(this.name);
+	}
+	
+	
 }
