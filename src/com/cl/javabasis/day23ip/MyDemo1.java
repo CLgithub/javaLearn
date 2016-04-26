@@ -51,18 +51,19 @@ public class MyDemo1 {
 	public static void main(String[] args) throws IOException {
 		//getLocalHost 获取本机的ip地址对象
 //		InetAddress inetAddress=InetAddress.getLocalHost();
+//		System.out.println(inetAddress);
 //		System.out.println("IP地址:"+inetAddress.getHostAddress());
 //		System.out.println("主机名:"+inetAddress.getHostName());
 		
 		//获取别人机器的ip地址对象,
 		
 		//可以根据一个ip地址的字符串形式或者一个主机名生成一个ip地址对象。
-//		InetAddress inetAddress2=InetAddress.getByName("192.168.1.105");
+//		InetAddress inetAddress2=InetAddress.getByName("168.10.10.16");
 ////		InetAddress inetAddress2=InetAddress.getByName("LdeiMac");
 //		System.out.println("IP地址:"+inetAddress2.getHostAddress());
 //		System.out.println("主机名:"+inetAddress2.getHostName());
 		
-		InetAddress[] addresses=InetAddress.getAllByName("www.google.com.hk");//ip 主机名 域名
-		System.out.println(Arrays.toString(addresses));
+//		InetAddress[] addresses=InetAddress.getAllByName("www.google.com.hk");//ip 主机名 域名
+//		System.out.println(Arrays.toString(addresses));
 	}
 }
