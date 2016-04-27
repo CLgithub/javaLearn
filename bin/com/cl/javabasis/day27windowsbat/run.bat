@@ -1,7 +1,7 @@
 @echo off
-%注释%
-title 标题
+%娉ㄩ噴%
+title 鏍囬
 color 17
-echo bat处理文件
+echo bat澶勭悊鏂囦欢
 java -classpath .\test.zip; com.cl.javabasis.day27.MyDemo1
 pause
