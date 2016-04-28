@@ -20,6 +20,9 @@ package com.cl.javabasis.day27windowsbat;
 	%注释的内容%
 	pause: 让当前控制台停留。
 	%1~%9:   给bat处理文件传入参数。
+	
+	
+	linux或mac os下直接命令行
  
  */
 public class MyDemo1 {
