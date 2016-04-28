@@ -1,4 +1,4 @@
-package com.cl.javabasis.day27colon;
+package com.cl.javabasis.day27coloe;
 
 /*
  对象的克隆
