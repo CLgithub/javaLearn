@@ -1,0 +1,3 @@
+com.cl.javabasis.day27reflect.Person
+id=110
+name=小黄
