@@ -102,7 +102,6 @@ class Emp implements Weatherlistener{
 }
 class Student implements Weatherlistener{
 	String name;
-
 	public Student(String name) {
 		this.name = name;
 	}
