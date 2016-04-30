@@ -19,8 +19,8 @@ public class MyDemo1 {
 		Class clazz2=Person.class;
 		System.out.println("clazz1==class2? "+(clazz1==clazz2));
 		//获取Class对象的方式二:通过对象获取
-//		Class clazz3=new Person().getClass();
-//		System.out.println("clazz2==clazz3? "+(clazz2==clazz3));
+		Class clazz3=new Person().getClass();
+		System.out.println("clazz2==clazz3? "+(clazz2==clazz3));
 		
 	}
 }

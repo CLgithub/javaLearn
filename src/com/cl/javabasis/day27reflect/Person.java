@@ -10,7 +10,7 @@ public class Person{
 	public Person() {
 	}
 	
-	public void eat(int num) {
+	private void eat(int num) {
 		System.out.println(name+"吃很"+num+"斤饭");
 	}
 	
