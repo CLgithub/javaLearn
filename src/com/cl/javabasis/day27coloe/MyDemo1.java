@@ -23,6 +23,7 @@ public class MyDemo1 {
 		p2.address.aName="长沙";
 		
 //		System.out.println(p1.address.equals(p2.address));	//true
+		
 		System.out.println(p1);
 		System.out.println(p2);
 		 
