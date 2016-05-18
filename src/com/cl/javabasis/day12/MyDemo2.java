@@ -35,7 +35,6 @@ public class MyDemo2 {
 //		System.out.println(p1.equals(p2));
 		
 		
-		
 //		//2.2获取
 //		System.out.println("判断某位置的字符:"+str1.charAt(3));//判断某位置的字符
 //		System.out.println("查找某字符第一次出现在字符串中的位置:"+str1.indexOf('l'));//查找某字符第一次出现在字符串中的位置
