@@ -8,6 +8,7 @@ public class Person{
 		this.name = name;
 	}
 	public Person() {
+		System.out.println("构造方法被调用");
 	}
 	
 	private void eat(int num) {

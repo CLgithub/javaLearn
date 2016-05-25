@@ -19,8 +19,8 @@ public class MyDemo1 {
 //		method1();
 //		getOSTime();
 //		testExit();
-//		testGC2();
-		testGetenv();
+		testGC2();
+//		testGetenv();
 	}
 
 	/**
