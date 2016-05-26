@@ -36,13 +36,13 @@ public class MyDemo3 {
 //			System.out.println(it2.next());
 //		}
 		
-		//map集合的遍历方式三： entrySet方法遍历。
-		Set<Entry<String, String>> entrys=map.entrySet();
-		Iterator<Entry<String,String>> it=entrys.iterator();
-		while(it.hasNext()){
-			Entry<String, String> entry=it.next();
-			System.out.println(entry);
-			System.out.println("键："+entry.getKey()+",值："+entry.getValue());
-		}
+//		//map集合的遍历方式三： entrySet方法遍历。
+//		Set<Entry<String, String>> entrys=map.entrySet();
+//		Iterator<Entry<String,String>> it=entrys.iterator();
+//		while(it.hasNext()){
+//			Entry<String, String> entry=it.next();
+//			System.out.println(entry);
+//			System.out.println("键："+entry.getKey()+",值："+entry.getValue());
+//		}
 	}
 }
