@@ -20,14 +20,14 @@ public class MyDemo2 {
 //		System.out.println(str4.hashCode());
 		
 		//2.1比较	==比较栈内存的内容，equals比较堆内存的内容
-//		System.out.println(str1==str2);
-//		System.out.println(str1.equals(str2));
-//		
-//		System.out.println(str1==str3);
-//		System.out.println(str1.equals(str3));
-//		
-//		System.out.println(str3==str4);
-//		System.out.println(str3.equals(str4));
+		System.out.println(str1==str2);
+		System.out.println(str1.equals(str2));
+		
+		System.out.println(str1==str3);
+		System.out.println(str1.equals(str3));
+		
+		System.out.println(str3==str4);
+		System.out.println(str3.equals(str4));
 		
 //		Person p1=new Person("x", 10);
 //		Person p2=new Person("x", 10);
@@ -62,14 +62,14 @@ public class MyDemo2 {
 //		System.out.println(Arrays.toString(cs));
 		
 		//其他方法
-		String str8=" test String";
-		System.out.println(str8.replace('s', 'b'));//替换
-		String[] strings=str8.split("i");//切割
-		System.out.println(Arrays.toString(strings));
-		System.out.println(str8.substring(2));//截取字符串
-		System.out.println(str8.toUpperCase());//转换为大写
-		System.out.println(str8.toLowerCase());//转换为小写
-		System.out.println(str8.trim());//去前后空格
+//		String str8=" test String";
+//		System.out.println(str8.replace('s', 'b'));//替换
+//		String[] strings=str8.split("i");//切割
+//		System.out.println(Arrays.toString(strings));
+//		System.out.println(str8.substring(2));//截取字符串
+//		System.out.println(str8.toUpperCase());//转换为大写
+//		System.out.println(str8.toLowerCase());//转换为小写
+//		System.out.println(str8.trim());//去前后空格
 		
 		
 		
