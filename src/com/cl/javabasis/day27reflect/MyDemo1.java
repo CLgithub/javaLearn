@@ -10,7 +10,7 @@ package com.cl.javabasis.day27reflect;
 public class MyDemo1 {
 	Person p;
 	public static void main(String[] args) throws ClassNotFoundException {
-		Person p=new Person(110, "小明");
+//		Person p=new Person(110, "小明");
 		
 		//获取Class对象的方式一：用过类的全名获取		推荐使用
 		Class clazz1=Class.forName("com.cl.javabasis.day27reflect.Person");
@@ -18,7 +18,7 @@ public class MyDemo1 {
 		//获取Class对象的方式二:通过类名获取
 		Class clazz2=Person.class;
 		System.out.println("clazz1==class2? "+(clazz1==clazz2));
-		//获取Class对象的方式二:通过对象获取
+		//获取Class对象的方式三:通过对象获取
 		Class clazz3=new Person().getClass();
 		System.out.println("clazz2==clazz3? "+(clazz2==clazz3));
 		

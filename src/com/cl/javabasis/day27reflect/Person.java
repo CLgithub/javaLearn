@@ -10,8 +10,12 @@ public class Person{
 	public Person() {
 		System.out.println("构造方法被调用");
 	}
+
+	private Person(String name){
+		this.name=name;
+	}
 	
-	private void eat(int num) {
+	public void eat(int num) {
 		System.out.println(name+"吃很"+num+"斤饭");
 	}
 	

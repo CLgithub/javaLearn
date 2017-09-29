@@ -17,7 +17,7 @@ public class MyDemo4 {
 //		}
 		
 		Person person=new Person();
-		
+
 		Field field=clazz1.getDeclaredField("id");
 		field.setAccessible(true);//设置访问权限可以访问
 		field.set(person,13);//给对象设置成员变量，第一个参数：设置该数据的成员变量，第二个参数：属性值

@@ -20,13 +20,14 @@ public class MyDemo3 {
 		
 		
 		Person person=new Person(110, "小白");
-//		Method methodeat=clazz1.getMethod("eat", int.class);
-////		System.out.println(methodeat);
+////		Method methodeat=clazz1.getMethod("eat", int.class);
+//		Method methodeat=clazz1.getDeclaredMethod("eat",int.class);
+////		methodeat.setAccessible(true);	//对于public方法，不需要进行暴力反射
 //		methodeat.invoke(person, 3);	//执行一个方法，第一个参数：方法的调用对象，第二参数：方法所需要的参数
 		
 		//执行私有方法
 //		Method method=clazz1.getDeclaredMethod("sleep", int.class);
-//		method.setAccessible(true);
+//		method.setAccessible(true);		//对于私有方法，需要进行暴力反射
 //		method.invoke(null, 7);
 		
 		//数组类型的class对象

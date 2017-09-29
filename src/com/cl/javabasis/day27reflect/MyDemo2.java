@@ -16,7 +16,6 @@ public class MyDemo2 {
 //		for(Constructor constructor:constructors){
 //			System.out.println(constructor);
 //		}
-		
 //		Constructor[] constructors=clazz1.getDeclaredConstructors();	//获取所有构造方法，包括private，		Declared（宣告）
 //		for(Constructor constructor:constructors){
 //			System.out.println(constructor);
