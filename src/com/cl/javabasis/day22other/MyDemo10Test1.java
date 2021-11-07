@@ -10,8 +10,8 @@ import java.io.File;
  */
 public class MyDemo10Test1 {
 	public static void main(String[] args) {
-		File dir1=new File("E:/aaa");
-		File dir2=new File("F:/a");
+		File dir1=new File("/Users/l/develop/ultrapower/ultrapowerBin/31-G");
+		File dir2=new File("/Users/l/develop/ultrapower/ultrapowerBin/31-");
 //		method2(dir1,"");
 //		method3(dir1);
 		method4(dir1, dir2);
@@ -88,8 +88,7 @@ public class MyDemo10Test1 {
 		for(File file:files){
 			if(file.isFile()){
 				file.renameTo(new File(dir2.getPath()+"/"+file.getName()));
-			}
-			else if(file.isDirectory()){
+			}else if(file.isDirectory()){
 				method4(file, new File(dir2.getPath()+"/"+file.getName()));
 			}
 		}

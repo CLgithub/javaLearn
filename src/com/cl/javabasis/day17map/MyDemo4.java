@@ -19,7 +19,7 @@ public class MyDemo4 {
 		map.put(new Person(110, "小明"), "001");
 		map.put(new Person(220, "小红"), "002");
 		map.put(new Person(440, "小白"), "007");
-		map.put(new Person(110, "小明"), "003");//如果出现了相同的键，那么后添加的值会取代之前的值
+		map.put(new Person(110, "小明2"), "003");//如果出现了相同的键，那么后添加的值会取代之前的值
 		System.out.println(map);
 	}
 }

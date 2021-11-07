@@ -41,9 +41,8 @@ public class MyDemo1 {
 			if(type==int.class){
 				field.set(object, Integer.parseInt(strings[1]));
 			}else{
-				field.set(object,strings[1]);
+				field.set(object, strings[1]);
 			}
-			
 		}
 		return object;
 	}

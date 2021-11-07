@@ -20,19 +20,19 @@ public class MyDemo4 {
 //		System.out.println(Math.floor(1.3));//向下取整
 //		System.out.println(Math.floor(-1.3));//向下取整
 //		
-//		System.out.println(Math.round(2.4));//四舍五入（+0.5再向左取整）
-//		System.out.println(Math.round(2.5));//四舍五入
-//		System.out.println(Math.round(-2.4));//四舍五入
-//		System.out.println(Math.round(-2.5));//四舍五入
+		System.out.println(Math.round(2.4));//四舍五入（+0.5再向左取整）
+		System.out.println(Math.round(2.5));//四舍五入
+		System.out.println(Math.round(-2.4));//四舍五入
+		System.out.println(Math.round(-2.5));//四舍五入
 		
-		System.out.println(Math.random()*10);//随机数
-		//更好用,next……后可以产生各种类型的随机
-		Random random=new Random();
-		int r=random.nextInt(11);//产生0~10之间的随机数
-		int r2=random.nextInt(10)+1;//产生1~9之间的随机数
-		System.out.println(r2);
-		
-		System.out.println(random.nextBoolean());
+//		System.out.println(Math.random()*10);//随机数
+//		//更好用,next……后可以产生各种类型的随机
+//		Random random=new Random();
+//		int r=random.nextInt(11);//产生0~10之间的随机数
+//		int r2=random.nextInt(10)+1;//产生1~9之间的随机数
+//		System.out.println(r2);
+//		
+//		System.out.println(random.nextBoolean());
 		
 	}
 	

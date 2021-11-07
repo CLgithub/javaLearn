@@ -12,11 +12,11 @@ package com.cl.javabasis.day3;
 class Demo09{
 
 	public static void main(String[] args){
-		System.out.println(6&3); // 2 
-		System.out.println(6|3); // 7
+		System.out.println(6&3); // 2 = 110 & 011 = 010
+		System.out.println(6|3); // 7 = 100 | 011 = 111
 		System.out.println(6^3^3); //  6
 
-		System.out.println(~7);  // -8
+		System.out.println(~7);  // -8   0111 取反 1000 
 	}
 }
 

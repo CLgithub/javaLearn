@@ -14,7 +14,7 @@ public class MyDemo2 {
 		t2.start();
 		t3.start();*/
 		
-		Thre2 t1=new Thre2();
+		Thre2 t1=new Thre2(100);
 		new Thread(t1,"W1").start();
 		new Thread(t1,"W2").start();
 		new Thread(t1,"W3").start();
@@ -45,9 +45,13 @@ class Thre extends Thread{
 }
 
 class Thre2 implements Runnable{
-	private int tickets=50;
+	private int tickets;
+	
+	public Thre2(int tickets) {
+		this.tickets = tickets;
+	}
 	public void run() {
-		while(true){
+		while(tickets>1){
 			shoupiao();
 		}
 	}

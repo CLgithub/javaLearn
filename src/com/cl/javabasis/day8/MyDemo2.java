@@ -32,8 +32,10 @@ public class MyDemo2 {
 
 	public static void change1(int a,int b){
 		a=a^b;
-		b=a^b;
-		a=a^b;
+		b=a^b;	// b=a^b^b	b=a
+		a=a^b;	// a=a^b^a	a=b
+//		System.out.println(a);
+//		System.out.println(b);
 	}
 	
 	public static void change2(int[] arr,int a,int b){

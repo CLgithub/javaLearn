@@ -8,16 +8,16 @@ package com.cl.javabasis.day14;
  */
 public class SynchTest {
 	public static void main(String[] args) {
-		Quanqian q1=new Quanqian();
-		q1.setName("小明");
-		Quanqian q2=new Quanqian();
-		q2.setName("小红");
-		q1.start();
-		q2.start();
+//		Quanqian q1=new Quanqian();
+//		q1.setName("小明");
+//		Quanqian q2=new Quanqian();
+//		q2.setName("小红");
+//		q1.start();
+//		q2.start();
 		
-//		Q2 q1=new Q2();
-//		new Thread(q1).start();
-//		new Thread(q1).start();
+		Q2 q1=new Q2();
+		new Thread(q1).start();
+		new Thread(q1).start();
 	}
 }
 
@@ -58,8 +58,8 @@ class Q2 implements Runnable {
 			}
 			synchronized (this) {
 				if (qian > 0) {
-					System.out.println(Thread.currentThread().getName()+"取了一次"+"剩"+qian);
 					qian-=1000;
+					System.out.println(Thread.currentThread().getName()+"取了一次"+"剩"+ qian);
 				} else {
 					break;
 				}

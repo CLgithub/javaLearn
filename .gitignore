@@ -3,12 +3,14 @@ Thumbs.db
 ehthumbs.db
 data.db
 *.iml
+*/*.class
 
 .idea/
 .classpath
 .project
 .settings/
 bin/
+bin/*
 build/
 out/
 

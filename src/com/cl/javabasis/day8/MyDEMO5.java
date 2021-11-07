@@ -13,7 +13,7 @@ public class MyDEMO5 {
 	public static void main(String[] args) {
 		MyShape shape=new Rect(3, 4);
 		getAreaAndLen(shape);
-//		getAreaAndLen(new Circle1(1));
+		getAreaAndLen(new Circle1(1));
 	}
 	//定义一个方法，传一个图形进去，得到其面积和周长
 	private static void getAreaAndLen(MyShape myShape){

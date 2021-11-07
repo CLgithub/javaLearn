@@ -1,5 +1,7 @@
 package com.cl.javabasis.day2;
 
+import java.net.URL;
+
 /*
 软件 = 数据+ 指令+ 文档
 
@@ -99,5 +101,7 @@ public class Demo4{
 		System.out.println(0b10); //二进制 , 如果一个数据要表示二进制，那么要在该数据的前面加上0b开头。
 		System.out.println(010); //八进制数据， 八进制的数据需要以0开头
 		System.out.println(0x10); //十六进制数据， 十六进制的数据需要以0x开头
+		
+		URL resource = Demo4.class.getClassLoader().getResource("/");
 	}
 }

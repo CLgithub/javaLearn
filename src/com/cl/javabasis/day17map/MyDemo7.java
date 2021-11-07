@@ -52,22 +52,22 @@ Collections：常见方法：
  * */
 public class MyDemo7 {
 	public static void main(String[] args) {
-		ArrayList<Integer> arrayList=new ArrayList<>();
-		arrayList.add(12);
-		arrayList.add(1);
-		arrayList.add(9);
-		arrayList.add(12);
-		arrayList.add(4);
-		Collections.sort(arrayList);
-		System.out.println(arrayList);
-		System.out.println("元素的索引值是："+Collections.binarySearch(arrayList, 4));
-		System.out.println("最大值："+Collections.max(arrayList));
-		System.out.println("最小值："+Collections.min(arrayList));
-		Collections.reverse(arrayList);
-		System.out.println("反转后："+arrayList);
-		arrayList=(ArrayList<Integer>) Collections.synchronizedList(arrayList);
-		
-		System.out.println("-------------------------------------------------------------");
+//		ArrayList<Integer> arrayList=new ArrayList<>();
+//		arrayList.add(12);
+//		arrayList.add(1);
+//		arrayList.add(9);
+//		arrayList.add(12);
+//		arrayList.add(4);
+//		Collections.sort(arrayList);
+//		System.out.println(arrayList);
+//		System.out.println("元素的索引值是："+Collections.binarySearch(arrayList, 4));
+//		System.out.println("最大值："+Collections.max(arrayList));
+//		System.out.println("最小值："+Collections.min(arrayList));
+//		Collections.reverse(arrayList);
+//		System.out.println("反转后："+arrayList);
+////		arrayList=(ArrayList<Integer>) Collections.synchronizedList(arrayList);
+//		
+//		System.out.println("-------------------------------------------------------------");
 		
 		
 		//如果集合存储的是不具备自然顺序的元素，那么需要比较器

@@ -41,9 +41,9 @@ public class MyDemo8 {
 		Integer[] arr2=/*{2,4,8,1,5,15,7};*/Arrays.copyOf(arr,10);
 		System.out.println(Arrays.toString(arr2));
 		System.out.println(Arrays.toString(Arrays.copyOfRange(arr, 1, 9)));
-		
+//		
 		System.out.println("判断两个数组的元素是否完全一致："+Arrays.equals(arr, arr2));//对应位置
-		
+//		
 		List<Integer> list=Arrays.asList(arr2);//数组变数组
 		list.toArray();//list便数组
 		System.out.println(list);
