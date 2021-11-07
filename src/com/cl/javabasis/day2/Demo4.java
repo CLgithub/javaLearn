@@ -38,11 +38,32 @@ import java.net.URL;
 			对应的二进制。
 
 			10(十进制)-------->1010(二进制）
+			10/2	5	0
+			5/2		2	1
+			2/2		1	0
+			1/2		0	1	
+			
+			可扩张至任意进制
+			23(十进制) -----> 0x17(十六进制)
+			23/f	1	7
+			1/f		0	1 
+			
+			33(十进制) -----> 0x21(十六进制)
+			33/f	2	1
+			2/f		0	2
 
 			二进制转十进制:使用二进制的每一位乘以2的n次方，n从0开始，每次递增1，然后把各部分的数据
 			相加即可。
 			
 			 1110(二进制) ---------> 14(十进制)
+			 
+			 1*2^3+1*2^2+1*2^1	= 14
+			 扩张：任意n进制的数据转换未十进制方法
+			 abcd  > a*n^3+b*n^2+c*n^1+d*n^1
+			 
+			 0x32(十六进制) ------> (十进制)
+			 3*16^1+2*16^0 = 50
+			 
 		
 		二进制的弊端： 二进制的书写太长了，不方便人类记忆。
 
@@ -100,8 +121,43 @@ public class Demo4{
 		System.out.println(10);// 十进制
 		System.out.println(0b10); //二进制 , 如果一个数据要表示二进制，那么要在该数据的前面加上0b开头。
 		System.out.println(010); //八进制数据， 八进制的数据需要以0开头
-		System.out.println(0x10); //十六进制数据， 十六进制的数据需要以0x开头
+		System.out.println(0xf4aL); //十六进制数据， 十六进制的数据需要以0x开头
 		
 		URL resource = Demo4.class.getClassLoader().getResource("/");
+
+//		method1();
+		
+		String decimalToN = decimalToN(45, 8, "");		// 0xf4aL  15104
+		System.out.println(decimalToN);
 	}
+	
+	public static void method1() {
+		long l1=100;
+		String method1 = decimalToN(l1, 16, "");
+		System.out.println(method1);
+	}
+	
+	/**
+	 * 通用方法 十进制 > n进制
+	 * @author chenlei
+	 * @date 2021年11月7日
+	 * @param a 数据
+	 * @param n 进制数
+	 * @param s
+	 * @return
+	 */
+	public static String decimalToN(long a, int n, String s) {
+		long l1=a/n;
+		if(l1==0) {
+			Long l2=a%n;
+			return l2.toString()+s;
+		}{
+			s+=a%n;
+			String l3 = decimalToN(l1, n, s);
+			return l3;
+		}
+	}
+	
+	
+	
 }
