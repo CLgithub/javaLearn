@@ -104,6 +104,13 @@ import java.net.URL;
 		相加即可。
 
 			34(十六进制)-----> 52（十进制）
+			
+	负数二进制表示方法：改负数的绝对值的二进制取反再加1
+		比如 -2	
+			0000 0010	2
+			1111 1101
+			1111 1110	-2
+	正数与负数以 1111(-1) 和 0000(0) 为分界线
 
 */
 public class Demo4{
@@ -127,15 +134,13 @@ public class Demo4{
 
 //		method1();
 		
-		String decimalToN = decimalToN(45, 8, "");		// 0xf4aL  15104
+		String decimalToN = decimalToN(256, 2, "");		// 0xf4aL  15104
 		System.out.println(decimalToN);
+		
+		System.out.println(Integer.toBinaryString(-2));
 	}
 	
-	public static void method1() {
-		long l1=100;
-		String method1 = decimalToN(l1, 16, "");
-		System.out.println(method1);
-	}
+	
 	
 	/**
 	 * 通用方法 十进制 > n进制
